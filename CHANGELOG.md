@@ -2,12 +2,12 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## [unreleased][unreleased]
+## [Unreleased][unreleased]
 ### Removed
 - `.sass-cache/` folder.
 - `*.css.map*` files
 
-## [0.0.1] - 2015-05-28.
+## [0.1.0] - 2015-05-28.
 ### Misc 
 - Forked from https://github.com/Automattic/_s
 
