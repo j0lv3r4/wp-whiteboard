@@ -1,0 +1,54 @@
+#comments {
+	border: 1px solid #ccc;
+	border-radius: 6px;
+
+	/* Any video inside the comments */
+	iframe {
+		max-width: 100%;
+	}
+}
+
+.comments-title {
+	margin-left: 1em;
+	margin-top: 1em;
+	margin-bottom: 0;
+}
+
+.comment-list {
+	margin-top: 1em;
+	list-style: none;
+	margin-left: 0;
+	padding-left: 0;
+}
+
+.comment {
+	padding: 1em;
+	border-bottom: 1px dotted #ccc;
+
+	&.even {}
+
+	&.odd {
+		background-color: lighten(#eee, 2%);
+	}
+}
+
+.comment-author {
+	.avatar {
+		float: left;
+		margin-right: .5em;
+	}
+}
+
+.comment-metadata {
+	font-size: 0.8em;
+	font-style: italic;
+}
+
+#respond {
+	padding: 1em;
+
+	textarea,
+	label {
+		display: block;
+	}
+}

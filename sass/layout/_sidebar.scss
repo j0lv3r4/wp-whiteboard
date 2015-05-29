@@ -1,0 +1,32 @@
+/*
+ * Sidebar 
+ */
+
+#secondary {
+	@include cols(4);
+
+	padding: 2em 1em 1em 1em;
+	background-color: #eee;
+
+	.search-submit {
+		display: none;
+	}
+
+	h1.widget-title {
+		font-size: $h2-font-size;;
+	}
+
+	.widget-title {
+		padding-bottom: .5em;
+		margin-bottom: .5em;
+		border-bottom: 1px solid #ddd;
+	}
+
+	.widget {
+		ul {
+			padding-left: 0;
+			margin-left: 0;
+			list-style: none;	
+		}
+	}
+}

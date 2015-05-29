@@ -1,0 +1,29 @@
+.container {
+	max-width: 60em;
+	margin: 0 auto;
+	padding-left: 1em;
+	padding-right: 1em;
+}
+
+.site-main {
+	@include cols(8, 0); // Second parameter means `margin-left: 0;`
+}
+
+.entry-meta {
+	text-transform: uppercase;
+	color: #999;
+
+	a {
+		color: #444;
+	}
+}
+
+/* Blog */
+
+.blog {
+	article {
+		margin-bottom: 4em;
+		padding-bottom: 2em;
+		border-bottom: 1px dotted #ccc;
+	}
+}
