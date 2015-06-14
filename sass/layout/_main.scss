@@ -6,7 +6,7 @@
 }
 
 .site-main {
-	@include cols(8, 0); // Second parameter means `margin-left: 0;`
+	@include cols(8, 0);
 }
 
 .entry-meta {

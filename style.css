@@ -605,6 +605,9 @@ blockquote p:last-child {
   .top-navigation .sub-menu,
   .top-navigation .children {
     background-color: #222; }
+  .top-navigation .menu ul {
+    float: left;
+    margin-bottom: 0; }
 
 #menu-top {
   margin: 0;
