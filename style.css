@@ -15,6 +15,15 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
  _s is based on lodashes http://lodashs.me/, (C) 2014-2015 Automattic, Inc.
 */
+/*! Hyx v2.0.0 | MIT License | http://github.com/thinkxl/hyx.less */
+.row {
+  width: 100%; }
+  .row:before, .row:after {
+    content: " ";
+    display: table; }
+  .row:after {
+    clear: both; }
+
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 /**
  * 1. Set default font family to sans-serif.
@@ -186,6 +195,7 @@ figure {
  * Address differences between Firefox and other browsers.
  */
 hr {
+  -moz-box-sizing: content-box;
   box-sizing: content-box;
   height: 0; }
 
@@ -314,6 +324,8 @@ input[type="number"]::-webkit-outer-spin-button {
 input[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
   /* 2 */
   box-sizing: content-box; }
 
@@ -370,30 +382,22 @@ td,
 th {
   padding: 0; }
 
-/*! Hyx v2.0.0 | MIT License | http://github.com/thinkxl/hyx.less */
-.row {
-  width: 100%; }
-  .row:before, .row:after {
-    content: " ";
-    display: table; }
-  .row:after {
-    clear: both; }
-
 /* Alignments */
-.alignleft {
-  display: inline;
-  float: left;
-  margin-right: 1.5rem; }
-
-.alignright {
-  display: inline;
-  float: right;
-  margin-left: 1.5rem; }
-
+.centered,
 .aligncenter {
   display: block;
   margin-left: auto;
   margin-right: auto; }
+
+.alignleft {
+  display: inline;
+  float: left;
+  margin-right: 1.5em; }
+
+.alignright {
+  display: inline;
+  float: right;
+  margin-left: 1.5em; }
 
 /*
  * Hide only visually, but have it available for screen readers:
@@ -436,37 +440,27 @@ th {
  * Update the foundational and global aspects of the page.
  */
 html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
 *, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
   box-sizing: inherit; }
-
-html,
-body {
-  margin: 0;
-  padding: 0; }
-
-html {
-  font-family: "PT Serif", serif;
-  font-size: 16px;
-  line-height: 1.618; }
 
 body {
   color: #333;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  line-height: 1.618;
   background-color: #fff;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%; }
 
-figure,
-img {
-  height: auto;
-  /* Make sure images are scaled correctly. */
-  max-width: 100%;
-  /* Adhere to container width. */ }
-
 /* No `:visited` state is required by default (browsers will use `a`) */
 a {
-  color: #2980b9;
+  color: blue;
   text-decoration: none;
   /* `:focus` is linked to `:hover` for basic accessibility */ }
   a:hover, a:focus {
@@ -474,41 +468,204 @@ a {
   a strong {
     color: inherit; }
 
-/*
- *  Typography
- */
-/* Modular Scale 
-http://modularscale.com/scale/?px1=16&px2=18&ra1=1.618&ra2=0
----------------------- 
-16px @ 1:1.618 
-18px @ 1:1.618 
-----------------------*/
-/* Headings */
-h1, h2, h3, h4, h5, h6 {
-  margin-top: 1rem;
-  margin-bottom: 0.382rem;
+hr {
+  margin: 2em 0;
+  border-top: 1px solid #eee;
+  border-bottom: none; }
+
+.lead {
+  font-size: 1.125em; }
+
+/* Based on FormHack v1.0.0 (formhack.io) */
+/* Global */
+.form-base input,
+.form-base textarea,
+.form-base select,
+.form-base option,
+.form-base optgroup,
+.form-base button,
+.form-base legend,
+.form-base fieldset {
+  outline: none;
+  vertical-align: top;
+  display: block; }
+.form-base datalist {
+  font-family: inherit;
+  font-size: inherit; }
+.form-base label {
+  display: block;
+  margin-bottom: 0; }
+
+/* Input & textarea */
+/* Fields with standard width */
+.form-base {
+  /* Fields with standard height */ }
+  .form-base input[type="text"],
+  .form-base input[type="email"],
+  .form-base input[type="password"],
+  .form-base input[type="search"],
+  .form-base input[type="color"],
+  .form-base input[type="date"],
+  .form-base input[type="datetime-local"],
+  .form-base input[type="month"],
+  .form-base input[type="number"],
+  .form-base input[type="tel"],
+  .form-base input[type="time"],
+  .form-base input[type="url"],
+  .form-base input[type="week"],
+  .form-base input[list],
+  .form-base input[type="file"],
+  .form-base select,
+  .form-base textarea {
+    width: 100%;
+    max-width: 400px;
+    padding: 8px;
+    background-color: #fff;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border: 1px solid #c8c8c8; }
+  .form-base input[type="text"],
+  .form-base input[type="email"],
+  .form-base input[type="password"],
+  .form-base input[type="search"],
+  .form-base input[type="color"],
+  .form-base input[type="date"],
+  .form-base input[type="datetime-local"],
+  .form-base input[type="month"],
+  .form-base input[type="number"],
+  .form-base input[type="tel"],
+  .form-base input[type="time"],
+  .form-base input[type="url"],
+  .form-base input[type="week"],
+  .form-base input[list] {
+    -webkit-appearance: none; }
+
+/* Other */
+.form-base textarea {
+  -webkit-appearance: none;
+  overflow: auto; }
+.form-base input[type="range"] {
+  height: 40px;
+  width: 100%;
+  max-width: 400px; }
+.form-base input[type="file"] {
+  min-height: 40px; }
+.form-base input[type="search"] {
+  height: 40px;
+  -webkit-appearance: none; }
+.form-base input[type="search"]::-webkit-search-cancel-button,
+.form-base input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+.form-base input[type="checkbox"],
+.form-base input[type="radio"] {
+  display: inline-block;
+  vertical-align: middle; }
+
+/* Select */
+.form-base {
+  /* Fieldset */ }
+  .form-base select {
+    height: 40px; }
+  .form-base select[multiple] {
+    height: auto;
+    min-height: 40px;
+    padding: 0; }
+    .form-base select[multiple] option {
+      margin: 0;
+      padding: 8px; }
+  .form-base fieldset {
+    padding: 10px 25px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border: 1px solid #c8c8c8; }
+  .form-base legend {
+    padding: 0;
+    font-weight: inherit; }
+
+/* States */
+.form-base input[disabled],
+.form-base textarea[disabled],
+.form-base select[disabled],
+.form-base option[disabled],
+.form-base button[disabled] {
+  cursor: not-allowed; }
+.form-base input:focus,
+.form-base textarea:focus,
+.form-base select:focus,
+.form-base option:focus,
+.form-base button:focus {
+  background-color: gainsboro;
+  border-color: inherit; }
+.form-base input[type="checkbox"]:focus,
+.form-base input[type="radio"]:focus {
+  outline: inherit solid 2px; }
+
+/* Field Group Styles */
+.field-group {
+  margin-bottom: 1em; }
+
+/* States & Feedback */
+.form-base .label-inline,
+.form-base .checkbox-text {
+  display: inline-block; }
+.form-base .form-base-error,
+.form-base .form-base-help {
+  margin: 0;
+  font-style: italic;
+  font-size: 80%; }
+.form-base .form-base-error {
+  color: brown; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 1em;
+  margin-bottom: 0.382em;
   line-height: 1.125;
-  /* 1 */
   text-rendering: optimizeLegibility; }
 
+/*
+ * Headings specific font size 
+ */
 h1 {
-  font-size: 2.618rem; }
+  font-size: 2.225em; }
 
 h2 {
-  font-size: 1.618rem; }
+  font-size: 1.718em; }
 
 h3 {
-  font-size: 1.125rem; }
+  font-size: 1.375em; }
 
-h4, h5, h6 {
-  font-size: 1rem; }
+h4 {
+  font-size: 1em; }
 
-/* Paragraph */
+h5 {
+  font-size: 1em; }
+
+/* 
+ * Paragraph 
+ */
 p {
-  margin-top: 1rem;
-  margin-bottom: 1rem; }
+  margin-top: 1em;
+  margin-bottom: 1em; }
 
-/* Lists */
+.lead {
+  color: #777;
+  font-size: 1.125em; }
+
+small {
+  font-size: 90%; }
+
+/*
+ * Lists
+ *
+ * `ul` inside a `nav` element doesn't need the list style
+ */
 nav ul,
 nav ol {
   list-style: none;
@@ -516,43 +673,129 @@ nav ol {
   padding-left: 0; }
 
 ul, ol, dl {
+  margin-bottom: 1em;
   margin-top: 0;
-  margin-bottom: 1rem;
   line-height: 1.618; }
 
 li > ul,
 li > ol {
   margin-bottom: 0; }
 
-/* Better styled `<hr>` */
-hr {
-  position: relative;
-  margin: 1.5rem 0;
-  border: 0;
-  border-top: 1px solid #eee;
-  border-bottom: 1px solid #fff; }
-
-/* Code */
+/*
+ * Code
+ */
 pre {
-  margin-left: 1.125rem;
+  margin-top: 0;
+  margin-bottom: 0;
   white-space: pre-wrap; }
 
-code {
-  color: brown; }
-
+code,
 kbd,
+pre,
 samp {
-  background-color: #eee; }
+  font-family: "Menlo", Inconsolata, Consolas, Monaco, monospace; }
 
-/* Quotes */
+/*
+ * Quotes
+ */
 blockquote {
-  padding-right: 5rem;
-  padding-left: 1.25rem;
-  margin: 1rem 0;
-  border-left: 0.25rem solid #d9d9d9; }
+  padding-left: 1.25em;
+  margin: 1em 0;
+  font-style: italic;
+  border-left: 5px solid #eee; }
 
 blockquote p:last-child {
   margin-bottom: 0; }
+
+/*
+ * Abbreviations
+ */
+abbr {
+  cursor: help;
+  font-variant: small-caps;
+  font-weight: bold;
+  text-transform: lowercase;
+  letter-spacing: 0.1em; }
+
+/*
+ * Buttons 
+ */
+.button-static, button,
+.button,
+a.button-primary,
+.button-primary,
+.button-small,
+.button-large,
+a.button,
+a.button-small,
+a.button-large {
+  display: inline-block;
+  padding: 0.75em 1em;
+  border: 0;
+  border-radius: 4px;
+  text-decoration: none;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: 1;
+  cursor: pointer; }
+  .button-static:focus, button:focus,
+  .button:focus,
+  .button-primary:focus,
+  .button-small:focus,
+  .button-large:focus {
+    outline: none; }
+
+button,
+.button,
+a.button-primary,
+.button-primary,
+.button-small,
+.button-large,
+a.button,
+a.button-primary,
+a.button-small,
+a.button-large {
+  background-color: #bbb;
+  color: #333; }
+  button:hover,
+  .button:hover,
+  .button-primary:hover,
+  .button-small:hover,
+  .button-large:hover,
+  a.button:hover,
+  a.button-primary:hover,
+  a.button-small:hover,
+  a.button-large:hover {
+    background-color: #959595;
+    color: #fff; }
+  button:active,
+  .button:active,
+  .button-primary:active,
+  .button-small:active,
+  .button-large:active,
+  a.button:active,
+  a.button-primary:active,
+  a.button-small:active,
+  a.button-large:active {
+    background-color: #9c9c9c; }
+
+a.button-primary,
+.button-primary {
+  background-color: #0078E7;
+  color: #e7f3ff; }
+  a.button-primary:hover,
+  .button-primary:hover {
+    background-color: #00509b;
+    color: #fff; }
+  a.button-primary:active,
+  .button-primary:active {
+    background-color: #0058aa; }
+
+.button-small {
+  font-size: 0.818em !important; }
+
+.button-large {
+  font-size: 1.125em !important; }
 
 #comments {
   border: 1px solid #ccc;
@@ -592,6 +835,68 @@ blockquote p:last-child {
   #respond label {
     display: block; }
 
+/* Images */
+figure,
+img {
+  display: block;
+  height: auto;
+  /* Make sure images are scaled correctly. */
+  max-width: 100%;
+  /* Adhere to container width. */ }
+
+/* Captions */
+.wp-caption {
+  margin-bottom: 1.5em;
+  max-width: 100%; }
+  .wp-caption .wp-caption-text {
+    margin: 0.8075em 0; }
+
+.wp-caption-text {
+  text-align: center; }
+
+/* Galleries */
+.gallery {
+  margin-bottom: 1.5em; }
+
+.gallery-item {
+  display: inline-block;
+  text-align: center;
+  vertical-align: top;
+  width: 100%; }
+
+.gallery-columns-2 .gallery-item {
+  max-width: 50%; }
+
+.gallery-columns-3 .gallery-item {
+  max-width: 33.33%; }
+
+.gallery-columns-4 .gallery-item {
+  max-width: 25%; }
+
+.gallery-columns-5 .gallery-item {
+  max-width: 20%; }
+
+.gallery-columns-6 .gallery-item {
+  max-width: 16.66%; }
+
+.gallery-columns-7 .gallery-item {
+  max-width: 14.28%; }
+
+.gallery-columns-8 .gallery-item {
+  max-width: 12.5%; }
+
+.gallery-columns-9 .gallery-item {
+  max-width: 11.11%; }
+
+.gallery-caption {
+  display: block; }
+
+/* Make sure embeds and iframes fit their containers. */
+embed,
+iframe,
+object {
+  max-width: 100%; }
+
 /* Top Navigation */
 .top-navigation {
   padding: .3em 0;
@@ -629,7 +934,7 @@ blockquote p:last-child {
   border-left: 1px solid #aaa; }
   .menu-item a,
   .page_item a {
-    color: #555; }
+    color: #333; }
   .menu-item:first-child,
   .page_item:first-child {
     border-left: none;
@@ -704,88 +1009,29 @@ blockquote p:last-child {
   text-align: right;
   width: 50%; }
 
-/*
- * Buttons 
- */
-.button-static, button,
-.button,
-a.button-primary,
-.button-primary,
-a.button-small,
-.button-small,
-a.button-large,
-.button-large,
-a.button {
-  display: inline-block;
-  padding: 0.318em 1em;
-  border: 0;
-  border-radius: 0.236rem;
-  text-decoration: none;
-  font-family: inherit;
-  line-height: 1;
-  cursor: pointer; }
-  .button-static:focus, button:focus,
-  .button:focus,
-  .button-primary:focus,
-  .button-small:focus,
-  .button-large:focus {
-    outline: none; }
+table {
+  margin-bottom: 1em;
+  width: 100%;
+  font-size: 85%;
+  border: 1px solid #b3b3b3;
+  border-collapse: collapse; }
 
-button,
-.button,
-a.button-primary,
-.button-primary,
-a.button-small,
-.button-small,
-a.button-large,
-.button-large,
-a.button,
-a.button-primary,
-a.button-small,
-a.button-large {
-  background-color: #bbb;
-  color: #333; }
-  button:hover,
-  .button:hover,
-  .button-primary:hover,
-  .button-small:hover,
-  .button-large:hover,
-  a.button:hover,
-  a.button-primary:hover,
-  a.button-small:hover,
-  a.button-large:hover {
-    background-color: #959595;
-    color: #333; }
-  button:active,
-  .button:active,
-  .button-primary:active,
-  .button-small:active,
-  .button-large:active,
-  a.button:active,
-  a.button-primary:active,
-  a.button-small:active,
-  a.button-large:active {
-    background-color: #9c9c9c; }
+td,
+th {
+  padding: 0.25em 0.5em;
+  border: 1px solid #e6e6e6; }
 
-a.button-primary,
-.button-primary {
-  background-color: #0078E7;
-  color: #e7f3ff; }
-  a.button-primary:hover,
-  .button-primary:hover {
-    background-color: #00509b;
-    color: #e7f3ff; }
-  a.button-primary:active,
-  .button-primary:active {
-    background-color: #0058aa; }
+th {
+  text-align: left; }
 
-a.button-small,
-.button-small {
-  font-size: 0.818rem; }
+tbody tr:nth-child(odd) td,
+tbody tr:nth-child(odd) th {
+  background-color: #f2f2f2; }
 
-a.button-large,
-.button-large {
-  font-size: 1.125rem; }
+.site-footer {
+  padding: 2em 0;
+  background-color: #333;
+  color: #fff; }
 
 [class^="col-"]:first-child {
   margin-left: 0; }
@@ -950,12 +1196,6 @@ a.button-large,
   padding-bottom: 2em;
   border-bottom: 1px dotted #ccc; }
 
-.site-footer {
-  margin-top: 2em;
-  padding: 2em 0;
-  background-color: #333;
-  color: #fff; }
-
 /*
  * Sidebar 
  */
@@ -968,7 +1208,7 @@ a.button-large,
   #secondary .search-submit {
     display: none; }
   #secondary h1.widget-title {
-    font-size: 1.618rem; }
+    font-size: 1.718em; }
   #secondary .widget-title {
     padding-bottom: .5em;
     margin-bottom: .5em;
@@ -977,3 +1217,5 @@ a.button-large,
     padding-left: 0;
     margin-left: 0;
     list-style: none; }
+
+/*# sourceMappingURL=style.css.map */

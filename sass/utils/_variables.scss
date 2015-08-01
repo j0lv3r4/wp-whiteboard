@@ -1,51 +1,103 @@
-// General
+// Scaffold
+//
+// Global styles.
 
-$base-unit: 'rem' !default;
-$site-width: 65#{$base-unit};
-$baseline: 1#{$base-unit};
+$wb-base-unit: 'em' !default;
+$wb-baseline: 1#{$wb-base-unit} !default;
+$wb-grid-gutter: 1% !default;
+$wb-container-width: 61.25#{$wb-base-unit} !default; // 980px
+$wb-body-bg: #fff !default;
 
-// Base Variables.
+// Colors
 
-$base-line-height: 1.618;
-$base-margin-top: $baseline;
-$base-margin-bottom: $baseline;
+// Brand colors
+$wb-brand-primary: blue;
 
-$base-text-color: #333;
-$base-text-link-color: #2980b9;
-$base-text-muted-color: lighten($base-text-color, 15%);
-
-$base-font-family: 'PT Serif', serif;
-$base-font-size: 16px;
-
-$base-headings-color: $base-text-color;
-$base-headings-margin-bottom: $base-margin-bottom;
-$base-headings-line-height: 1.125;
-
-$base-code-font-family: 'DejaVu Sans Mono', Inconsolata, Consolas, 'Lucida Console', monospace;
-$base-code-text-color: brown;
+// Custom colors
+$wb-gray-base: #000;
+$wb-gray-darker: #222;
+$wb-gray-dark: #333;
+$wb-gray: #555;
+$wb-gray-light: #777;
+$wb-gray-lighter: #eee;
 
 // Typography
 
-$indented-paragraphs: false !default;
+$wb-body-font: 'Roboto', sans-serif;
+$wb-mono-font: 'Menlo', Inconsolata, Consolas, Monaco, monospace;
 
-$h1-font-size: 2.618#{$base-unit};
-$h2-font-size: 1.618#{$base-unit};
-$h3-font-size: 1.125#{$base-unit};
-$h4-font-size: 1#{$base-unit};
+$wb-font-size: 16px;
+
+$wb-line-height: 1.618 !default;
+
+$wb-text-color: #333 !default;
+$wb-text-margin-top: $wb-baseline !default;
+$wb-text-margin-bottom: $wb-baseline !default;
+
+$wb-link-color: $wb-brand-primary !default;
+$wb-link-decoration: none;
+$wb-link-hover-decoration: underline;
+$wb-link-hover-color: darken($wb-link-color, 15%) !default;
+
+$wb-font-size-h1: 2.225#{$wb-base-unit};
+$wb-font-size-h2: 1.718#{$wb-base-unit};
+$wb-font-size-h3: 1.375#{$wb-base-unit};
+$wb-font-size-h4: 1#{$wb-base-unit};
+$wb-font-size-h5: 1#{$wb-base-unit};
+$wb-font-size-h6: 1#{$wb-base-unit};
+
+$wb-headings-font: inherit;
+$wb-headings-font-weight: 500;
+$wb-headings-line-height: 1.125;
+$wb-headings-color: $wb-text-color;
+$wb-headings-margin-bottom: $wb-text-margin-bottom;
+
+// Border radius
+
+$wb-border-radius-base: 4px;
+$wb-border-radius-large: 6px;
+$wb-border-radius-small: 3px;
 
 // Buttons
 
-$button-roundness: 0.236#{$base-unit};
+$wb-btn-border-radius: $wb-border-radius-base;
 
-$button-small-font-size: 0.818#{$base-unit};
-$button-large-font-size: 1.125#{$base-unit};
+$wb-btn-small-font-size: 0.818#{$wb-base-unit};
+$wb-btn-large-font-size: 1.125#{$wb-base-unit};
 
-$button-default-bg: #bbb;
-$button-default-text-color: #333;
+$wb-btn-default-bg: #bbb;
+$wb-btn-default-color: #333;
+$wb-btn-default-border: #ccc;
 
-$button-primary-bg: #0078E7;
-$button-primary-text-color: lighten($button-primary-bg, 50%);
+$wb-btn-primary-bg: #0078E7;
+$wb-btn-primary-color: lighten($wb-btn-primary-bg, 50%);
+$wb-btn-primary-border: lighten($wb-btn-primary-bg, 20%);
 
-// Navigation
+// Forms
 
-$navigation-link-color: #555;
+$wb-form-display: block;
+
+$wb-form-border-radius: 5px;
+$wb-form-border-width: 1px;
+$wb-form-border-style: solid;
+$wb-form-border-color: rgb(200, 200, 200);
+
+$wb-form-input-height: 40px;
+$wb-form-input-width: 100%;
+$wb-form-input-max-width: 400px;
+$wb-form-input-bg-color: #fff;
+$wb-form-focus-bg-color: rgb(220, 220, 220);
+$wb-form-focus-border-color: inherit;
+$wb-form-focus-font-color: inherit;
+
+// Icons
+
+$wb-icon-roundness: 3.778px;
+$wb-icon-border-color: #333;
+
+// Feedback
+
+$wb-feedback-color-information: #439ccf;
+$wb-feedback-color-error: #e72915;
+$wb-feedback-color-warning: #d35400;
+$wb-feedback-color-success: #74a730;

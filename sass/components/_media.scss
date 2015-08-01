@@ -2,18 +2,17 @@
 figure,
 img {
 	display: block;
-	max-width: 100%;
-	height: auto;
-	margin: 0 0 1rem;
+	height: auto; /* Make sure images are scaled correctly. */
+	max-width: 100%; /* Adhere to container width. */
 }
 
 /* Captions */
 .wp-caption {
-	margin-bottom: 1.5#{$base-unit};
+	margin-bottom: 1.5#{$wb-base-unit};
 	max-width: 100%;
 
 	.wp-caption-text {
-		margin: 0.8075#{$base-unit} 0;
+		margin: 0.8075#{$wb-base-unit} 0;
 		}
 }
 

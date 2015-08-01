@@ -1,0 +1,209 @@
+/* Based on FormHack v1.0.0 (formhack.io) */
+
+/* Global */
+
+.form-base {
+  input,
+  textarea,
+  select,
+  option,
+  optgroup,
+  button,
+  legend,
+  fieldset {
+    outline: none;
+    vertical-align: top;
+    display: $wb-form-display;
+  }
+
+  datalist {
+    font-family: inherit;
+    font-size: inherit;
+  }
+
+  label {
+    display: $wb-form-display;
+		margin-bottom: 0;
+  }
+}
+
+/* Input & textarea */
+
+/* Fields with standard width */
+.form-base {
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="search"],
+  input[type="color"],
+  input[type="date"],
+  input[type="datetime-local"],
+  input[type="month"],
+  input[type="number"],
+  input[type="tel"],
+  input[type="time"],
+  input[type="url"],
+  input[type="week"],
+  input[list],
+  input[type="file"],
+  select,
+  textarea {
+    width: $wb-form-input-width;
+    max-width: $wb-form-input-max-width;
+    padding: $wb-form-input-height / 5;
+    background-color: $wb-form-input-bg-color;
+
+    -webkit-border-radius: $wb-form-border-radius;
+    -moz-border-radius: $wb-form-border-radius;
+    border-radius: $wb-form-border-radius;
+    border: $wb-form-border-width $wb-form-border-style $wb-form-border-color;
+  }
+
+  /* Fields with standard height */
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="search"],
+  input[type="color"],
+  input[type="date"],
+  input[type="datetime-local"],
+  input[type="month"],
+  input[type="number"],
+  input[type="tel"],
+  input[type="time"],
+  input[type="url"],
+  input[type="week"],
+  input[list] {
+    -webkit-appearance: none;
+  }
+}
+
+/* Other */
+
+.form-base {
+  textarea {
+    -webkit-appearance: none;
+    overflow: auto;
+  }
+
+  input[type="range"] {
+    height: $wb-form-input-height;
+    width: $wb-form-input-width;
+    max-width: $wb-form-input-max-width;
+  }
+
+  input[type="file"] {
+    min-height: $wb-form-input-height;
+  }
+
+  input[type="search"] {
+    height: $wb-form-input-height;
+    -webkit-appearance: none;
+  }
+  input[type="search"]::-webkit-search-cancel-button,
+  input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+  }
+
+  input[type="checkbox"],
+  input[type="radio"] {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+
+/* Select */
+
+.form-base {
+  select {
+    height: $wb-form-input-height;
+
+    // @if $wb-form-allow-vendor-styling == false {
+    //   -webkit-appearance: none;
+    //   -moz-appearance: none;
+    //   -ms-appearance: none;
+    //   -o-appearance: none;
+    // }
+  }
+
+  select[multiple] {
+    height: auto;
+    min-height: $wb-form-input-height;
+    padding: 0;
+
+    option {
+      margin: 0;
+      padding: $wb-form-input-height / 5;
+    }
+  }
+
+  /* Fieldset */
+
+  fieldset {
+		padding: 10px 25px;
+		-webkit-border-radius: $wb-form-border-radius;
+		-moz-border-radius: $wb-form-border-radius;
+		border-radius: $wb-form-border-radius;
+		border: $wb-form-border-width $wb-form-border-style $wb-form-border-color;
+	}
+
+  legend {
+		padding: 0;
+		font-weight: inherit;
+  }
+}
+
+/* States */
+
+.form-base {
+  input[disabled],
+  textarea[disabled],
+  select[disabled],
+  option[disabled],
+  button[disabled] {
+    cursor: not-allowed;
+  }
+
+  input:focus,
+  textarea:focus,
+  select:focus,
+  option:focus,
+  button:focus  {
+    background-color: $wb-form-focus-bg-color;
+    border-color: $wb-form-focus-border-color;
+  }
+
+  input[type="checkbox"]:focus,
+  input[type="radio"]:focus {
+    outline: $wb-form-focus-border-color solid 2px;
+  }
+}
+
+/* Field Group Styles */
+
+.field-group {
+	margin-bottom: 1em;
+}
+
+/* States & Feedback */
+
+.form-base {
+	.label-inline,
+	.checkbox-text {
+		display: inline-block;
+	}
+
+	.form-base-error,
+	.form-base-help {
+		margin: 0;
+		font-style: italic;
+		font-size: 80%;
+	}
+
+
+	.form-base-error {
+		color: brown;
+	}
+
+}

@@ -4,11 +4,12 @@
 
 .button-static {
 	display: inline-block;
-	padding: 0.318em 1em;
+	padding: 0.75em 1em;
 	border: 0;
-	border-radius: $button-roundness;
+	border-radius: $wb-btn-border-radius;
 	text-decoration: none;
 	font-family: inherit;
+	font-size: inherit;
 	line-height: 1;
 	cursor: pointer;
 
@@ -17,17 +18,17 @@
 	}
 }
 
-@mixin button($background-color, $text-color) {
-	background-color: $background-color;
-	color: $text-color;
+@mixin button($wb-background-color, $wb-text-color) {
+	background-color: $wb-background-color;
+	color: $wb-text-color;
 
 	&:hover {
-		background-color: darken($background-color, 15%);
-		color: $text-color;
+		background-color: darken($wb-background-color, 15%);
+		color: #fff;
 	}
 
 	&:active {
-		background-color: darken($background-color, 12%);
+		background-color: darken($wb-background-color, 12%);
 	}
 }
 
@@ -35,24 +36,25 @@ button,
 .button,
 a.button {
 	@extend .button-static;
-	@include button($button-default-bg, $button-default-text-color);
+	@include button($wb-btn-default-bg, $wb-btn-default-color);
 }
 
 
 a.button-primary,
 .button-primary {
 	@extend .button;
-	@include button($button-primary-bg, $button-primary-text-color);
+
+	@include button($wb-btn-primary-bg, $wb-btn-primary-color);
 }
 
-a.button-small,
 .button-small {
 	@extend .button;
-	font-size: $button-small-font-size;
+
+	font-size: $wb-btn-small-font-size !important;
 }
 
-a.button-large,
 .button-large {
 	@extend .button;
-	font-size: $button-large-font-size;
+
+	font-size: $wb-btn-large-font-size !important;
 }

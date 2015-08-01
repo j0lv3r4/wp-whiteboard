@@ -30,8 +30,8 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 // Vendors
 
-@import "vendors/normalize";
 @import "vendors/fraction";
+@import "vendors/normalize";
 
 // Utils
 
@@ -42,22 +42,23 @@ Use it to make something cool, have fun, and share what you've learned with othe
 // Base 
 
 @import "base/base";
+@import "base/forms";
 @import "base/typography";
 
 // Components
  
-@import "components/comments";
-@import "components/dropdown";
-@import "components/forms";
-@import "components/navigation";
 @import "components/buttons";
+@import "components/comments";
+@import "components/media";
+@import "components/navigation";
+@import "components/tables";
  
 // Layout
  
+@import "layout/footer";
 @import "layout/grid";
 @import "layout/header";
 @import "layout/main";
-@import "layout/footer";
 @import "layout/sidebar";
  
 // Pages

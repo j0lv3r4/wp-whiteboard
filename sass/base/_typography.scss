@@ -1,66 +1,60 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin-top: $wb-text-margin-top;
+	margin-bottom: 0.382#{$wb-base-unit};
+	line-height: $wb-headings-line-height;
+	text-rendering: optimizeLegibility;
+}
+
 /*
- *  Typography
+ * Headings specific font size 
  */
 
-/* Modular Scale 
-http://modularscale.com/scale/?px1=16&px2=18&ra1=1.618&ra2=0
----------------------- 
-16px @ 1:1.618 
-18px @ 1:1.618 
-----------------------*/
+h1 { font-size: $wb-font-size-h1;  }
+h2 { font-size: $wb-font-size-h2;  }
+h3 { font-size: $wb-font-size-h3;  }
+h4 { font-size: $wb-font-size-h4;  }
+h5 { font-size: $wb-font-size-h5;  }
 
-/* Headings */
-h1, h2, h3, h4, h5, h6 {
-	margin-top: $base-margin-top;
-	margin-bottom: 0.382#{$base-unit};
-  line-height: $base-headings-line-height; /* 1 */
-  text-rendering: optimizeLegibility;
-}
+/* 
+ * Paragraph 
+ */
 
-h1 {
-  font-size: $h1-font-size;
-}
-
-h2 {
-  font-size: $h2-font-size;
-}
-
-h3 {
-  font-size: $h3-font-size;
-}
-
-h4, h5, h6 {
-  font-size: $h4-font-size;
-}
-
-/* Paragraph */
 p {
-	margin-top: $base-margin-top;
-
-	@if $indented-paragraphs {
-		margin-bottom: 0;
-
-		& + p {
-			text-indent: 2em;		
-			margin-top: 0;
-		}
-	} @else {
-		margin-bottom: $base-margin-bottom;
-	}
+	margin-top: $wb-text-margin-top;
+	margin-bottom: $wb-baseline;
 }
 
-/* Lists */
+.lead {
+	color: $wb-gray-light;
+	font-size: 1.125#{$wb-base-unit};
+}
+
+small {
+	font-size: 90%;
+}
+
+/*
+ * Lists
+ *
+ * `ul` inside a `nav` element doesn't need the list style
+ */
+
 nav ul,
 nav ol {
- list-style: none;
- margin-left: 0;
- padding-left: 0;
+	list-style: none;
+	margin-left: 0;
+	padding-left: 0;
 }
 
 ul, ol, dl {
-  margin-top: 0;
-  margin-bottom: $base-margin-bottom;
-  line-height: $base-line-height;
+	margin-bottom: $wb-text-margin-bottom;
+	margin-top: 0;
+	line-height: $wb-line-height;
 }
 
 li > ul,
@@ -68,38 +62,46 @@ li > ol {
 	margin-bottom: 0;
 }
 
-/* Better styled `<hr>` */
-hr {
-  position: relative;
-  margin: 1.5#{$base-unit} 0;
-  border: 0;
-  border-top: 1px solid #eee;
-  border-bottom: 1px solid #fff;
-}
+/*
+ * Code
+ */
 
-/* Code */
 pre {
-	margin-left: 1.125#{$base-unit};
+	margin-top: 0;
+	margin-bottom: 0;
 	white-space: pre-wrap;
 }
 
-code {
-	color: $base-code-text-color;
-}
-
+code,
 kbd,
+pre,
 samp {
-	background-color: #eee;
+	font-family: $wb-mono-font;
 }
 
-/* Quotes */
+/*
+ * Quotes
+ */
+
 blockquote {
-	padding-right: 5#{$base-unit};
-	padding-left: 1.25#{$base-unit};
-  margin: 1#{$base-unit} 0;
-  border-left: .25#{$base-unit} solid lighten($base-text-color, 65%);
+	padding-left: 1.25#{$wb-base-unit};
+	margin: 1#{$wb-base-unit} 0;
+	font-style: italic;
+	border-left: 5px solid $wb-gray-lighter;
 }
 
 blockquote p:last-child {
-  margin-bottom: 0;
+	margin-bottom: 0;
+}
+
+/*
+ * Abbreviations
+ */
+
+abbr {
+	cursor: help;
+	font-variant: small-caps;
+	font-weight: bold;
+  text-transform: lowercase;
+	letter-spacing: 0.1em;
 }
