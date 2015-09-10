@@ -1,3 +1,7 @@
+/* 
+ * Typography
+ */
+
 h1,
 h2,
 h3,
@@ -10,20 +14,14 @@ h6 {
 	text-rendering: optimizeLegibility;
 }
 
-/*
- * Headings specific font size 
- */
-
+/* Headings specific font size */
 h1 { font-size: $wb-font-size-h1;  }
 h2 { font-size: $wb-font-size-h2;  }
 h3 { font-size: $wb-font-size-h3;  }
 h4 { font-size: $wb-font-size-h4;  }
 h5 { font-size: $wb-font-size-h5;  }
 
-/* 
- * Paragraph 
- */
-
+/* Paragraph */
 p {
 	margin-top: $wb-text-margin-top;
 	margin-bottom: $wb-baseline;
@@ -43,7 +41,6 @@ small {
  *
  * `ul` inside a `nav` element doesn't need the list style
  */
-
 nav ul,
 nav ol {
 	list-style: none;
@@ -62,10 +59,7 @@ li > ol {
 	margin-bottom: 0;
 }
 
-/*
- * Code
- */
-
+/* Code */
 pre {
 	margin-top: 0;
 	margin-bottom: 0;
@@ -79,10 +73,7 @@ samp {
 	font-family: $wb-mono-font;
 }
 
-/*
- * Quotes
- */
-
+/* Quotes */
 blockquote {
 	padding-left: 1.25#{$wb-base-unit};
 	margin: 1#{$wb-base-unit} 0;
@@ -94,10 +85,7 @@ blockquote p:last-child {
 	margin-bottom: 0;
 }
 
-/*
- * Abbreviations
- */
-
+/* Abbreviations */
 abbr {
 	cursor: help;
 	font-variant: small-caps;

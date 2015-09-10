@@ -1,4 +1,8 @@
-/* Top Navigation */
+/*
+ * Navigation 
+ */
+
+/* Top navigation */
 .top-navigation {
 	padding: .3em 0;
 	background-color: #222;
@@ -8,7 +12,9 @@
 	.page_item {
 		border: none;
 
-		a { color: #fff; }
+		a { 
+			color: #fff; 
+		}
 	}
 
 	.sub-menu,
@@ -27,7 +33,7 @@
 	float: right;
 }
 
-/* Main Navigation */
+/* Main navigation */
 .main-navigation {
 	padding: .618em 0;
 	background-color: #ccc;
@@ -61,17 +67,7 @@
 	float: left;
 }
 
-/* Dropdown */
-.menu-item-has-children,
-.page_item_has_children {
-	position: relative;
-
-	&:hover > .sub-menu,
-	&:hover > .children {
-		display: block;
-	}
-}
-
+/* Dropdown menu */
 .sub-menu,
 .children {
 	position: absolute;
@@ -92,7 +88,18 @@
 	}
 }
 
-/* Small menu */
+/* Dropdown menu element */
+.menu-item-has-children,
+.page_item_has_children {
+	position: relative;
+
+	&:hover > .sub-menu,
+	&:hover > .children {
+		display: block;
+	}
+}
+
+/* Toggle button for mobile navigation */
 .menu-toggle,
 .main-navigation.toggled .nav-menu {
 	display: block;
@@ -110,6 +117,7 @@
 	}
 }
 
+/* Misc navigation elements */
 .site-main .comment-navigation,
 .site-main .posts-navigation,
 .site-main .post-navigation {
