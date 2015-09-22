@@ -2,12 +2,23 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## [Unreleased][unreleased]
-### Removed
-- `.sass-cache/` folder.
-- `*.css.map*` files
+## [1.1.0] - 2015-09-22
 
-## [0.1.0] - 2015-05-28.
+### Added
+
+- `.gulpfile.babel.js`
+
+### Changed
+
+- Gulp replaced Grunt.
+- Removed mixins on main layout and sidebar, added classes to markup instead.
+
+### Removed
+
+- `.sass-cache/` folder from the repo.
+- `*.css.map*` files from the repo.
+
+## [1.0.0] - 2015-05-28.
 ### Misc 
 - Forked from https://github.com/Automattic/_s
 

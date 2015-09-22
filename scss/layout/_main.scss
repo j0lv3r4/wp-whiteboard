@@ -9,9 +9,7 @@
 	padding-right: 1em;
 }
 
-.site-main {
-	@include cols(8, 0);
-}
+.site-main {}
 
 .entry-meta {
 	text-transform: uppercase;
