@@ -10,6 +10,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 
+- `sass/` folder renamed to `scss/`.
 - Gulp replaced Grunt.
 - Removed mixins on main layout and sidebar, added classes to markup instead.
 
