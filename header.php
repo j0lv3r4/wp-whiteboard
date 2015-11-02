@@ -2,10 +2,13 @@
 /**
  * The header for our theme.
  *
- * Displays all of the <head> section and everything up till <div id="content">
+ * This is the template that displays all of the <head> section and everything up until <div id="content">
  *
- * @package _s
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ *
+ * @package whiteboard
  */
+
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -19,38 +22,32 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
-	<div class="container">
-		<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', '_s' ); ?></a>
-	</div> <!-- .container -->
-
-	<nav id="top-navigation" class="top-navigation" role="navigation">
-		<div class="container">
-			<div class="row">
-				<button class="menu-toggle" aria-controls="menu" aria-expanded="false"><?php _e( 'Top Menu', '_s' ); ?></button>
-				<?php wp_nav_menu( array( 'theme_location' => 'top' ) ); ?>
-			</div> <!-- .row -->
-		</div> <!-- .container -->
-	</nav><!-- #site-navigation -->
+  <div class="container">
+    <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'whiteboard' ); ?></a>
+  </div> <!-- .container -->
 
 	<header id="masthead" class="site-header" role="banner">
-		<div class="container">
-			<div class="row">
-				<div class="site-branding">
-					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-					<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-				</div><!-- .site-branding -->
+    <div class="container">
+      <div class="row">
+        <div class="site-branding">
+          <?php if ( is_front_page() && is_home() ) : ?>
+            <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+          <?php else : ?>
+            <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+          <?php endif; ?>
+          <p class="site-description"><?php bloginfo( 'description' ); ?></p>
+        </div> <!-- .row -->
+      </div> <!-- .container -->
+		</div><!-- .site-branding -->
 
-			</div> <!-- .row -->
-		</div> <!-- .container -->
+		<nav id="site-navigation" class="main-navigation" role="navigation">
+      <div class="container">
+        <div class="row">
+          <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'whiteboard' ); ?></button>
+          <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+        </div> <!-- .row -->
+      </div> <!-- .container -->
+		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
-
-	<nav id="site-navigation" class="main-navigation" role="navigation">
-		<div class="container">
-			<div class="row">
-				<button class="menu-toggle" aria-controls="menu" aria-expanded="false"><?php _e( 'Primary Menu', '_s' ); ?></button>
-				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-			</div> <!-- .row -->
-		</div> <!-- .container -->
-	</nav><!-- #site-navigation -->
 
 	<div id="content" class="site-content">
