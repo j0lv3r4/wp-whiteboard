@@ -14,9 +14,9 @@
 		<div class="container">
 			<div class="row">
 				<div class="site-info">
-					<a href="<?php echo esc_url( __( 'http://wordpress.org/', '_s' ) ); ?>"><?php printf( __( 'Proudly powered by %s', '_s' ), 'WordPress' ); ?></a>
+					<a href="<?php echo esc_url( __( 'https://wordpress.org/', '_s' ) ); ?>"><?php printf( __( 'Proudly powered by %s', '_s' ), 'WordPress' ); ?></a>
 					<span class="sep"> | </span>
-					<?php printf( __( 'Theme: %1$s by %2$s.', '_s' ), 'White Board', '<a href="http://thinkxl.github.io" rel="designer">thinkxl</a>' ); ?>
+					<?php printf( __( 'Theme: %1$s by %2$s.', '_s' ), 'Whiteboard', '<a href="' . esc_url( __('http://adwhite.com', '_s') ) . '" rel="designer">thinkxl</a>' ); ?>
 				</div><!-- .site-info -->
 			</div> <!-- .row -->
 		</div> <!-- .container -->
