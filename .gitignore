@@ -129,4 +129,4 @@ $RECYCLE.BIN/
 *.lnk
 
 # Bower
-bower_components
+vendors
