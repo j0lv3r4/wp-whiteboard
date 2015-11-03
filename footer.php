@@ -28,8 +28,5 @@
 
 <?php wp_footer(); ?>
 
-<!-- bower:js -->
-<!-- endbower -->
-
 </body>
 </html>

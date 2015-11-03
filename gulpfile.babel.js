@@ -26,33 +26,42 @@ gulp.task('sass', () => {
 });
 
 gulp.task('wiredep', () => {
-  gulp.src([src + '/header.php', src + '/footer.php'])
-    .pipe(wiredep())
-    .pipe(gulp.dest(src + '/'));
+  // gulp.src([src + '/header.php', src + '/footer.php'])
+  //   .pipe(wiredep())
+  //   .pipe(gulp.dest(src + '/'));
 
   gulp.src(src + '/scss/style.scss')
     .pipe(wiredep())
     .pipe(gulp.dest(src + '/scss'));
 
+  // gulp.src(src + '/functions.php')
+  //   .pipe(wiredep({
+  //     fileTypes: {
+  //       php: {
+  //         block: /(([ \t ]*)\/\/\s*bower:*(\S*))(\n|\r|.)*?(\/\/\s*endbower)/gi,
+  //         replace: {
+  //           js: function(filePath) {
+  //             return "wp_enqueue_script( 'whiteboard-" + filePath.split('/')[1] + "', get_template_directory_uri() . '/" + filePath + "', array(), '20120206', true );";
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }))
+  //   .pipe(gulp.dest(src + '/'));
+});
+
+gulp.task('inject', () => {
   gulp.src(src + '/functions.php')
-    .pipe(wiredep({
-      fileTypes: {
-        php: {
-          block: /(([ \t ]*)\/\/\s*bower:*(\S*))(\n|\r|.)*?(\/\/\s*endbower)/gi,
-          replace: {
-            js: function(filePath) {
-              return "wp_enqueue_script( 'whiteboard-" + filePath.split('/')[1] + "', get_template_directory_uri() . '/" + filePath + "', array(), '20120206', true );";
-            }
-          }
-        }
+    .pipe($.inject(gulp.src([src + '/js/vendors/**/*.js']), {
+      starttag: '// scripts',
+      endtag: '// endscripts',
+      transform: (filePath, file) => {
+        return "wp_enqueue_script( 'whiteboard-" + filePath.split('/')[3] + "', get_template_directory_uri() . '" + filePath + "', array(), '20130115', true );";
       }
     }))
     .pipe(gulp.dest(src + '/'));
 });
 
-gulp.task('useref', () => {
-
-});
 
 gulp.task('serve', () => {
   browserSync({

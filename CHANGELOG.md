@@ -7,7 +7,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 
-- Wiredep support to inject JavaScript dependencies direct to `functions.php`.
+- Gulp-inject and Bower-installer to inject JavaScript dependencies direct to `functions.php`.
 
 ### Changed
 

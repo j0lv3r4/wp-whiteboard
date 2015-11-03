@@ -17,10 +17,6 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
-<!-- bower:css -->
-<link rel="stylesheet" href="vendors/normalize-css/normalize.css" />
-<!-- endbower -->
-
 <?php wp_head(); ?>
 </head>
 
