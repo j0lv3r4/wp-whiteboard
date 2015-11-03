@@ -2,6 +2,7 @@ import gulp from 'gulp';
 import gulpLoadPlugins from 'gulp-load-plugins';
 import browserSync from 'browser-sync';
 import del from 'del';
+import {stream as wiredep} from 'wiredep';
 
 const devUrl = 'whiteboard.dev';
 const themeName = 'whiteboard';
@@ -10,16 +11,9 @@ const reload = browserSync.reload;
 const src = '.';
 const dest = '../' + themeName;
 
-var plumbErrorHandler = { 
-  errorHandler: $.notify.onError({
-    title: 'Gulp',
-    message: 'Error: <%= error.message %>'
-  }) 
-};
-
 gulp.task('sass', () => {
   return gulp.src(src + '/scss/**/*.scss')
-    .pipe($.plumber(plumbErrorHandler))
+    .pipe($.plumber())
     .pipe($.sourcemaps.init())
     .pipe($.sass({
       outputStyle: 'expanded',
@@ -29,6 +23,35 @@ gulp.task('sass', () => {
     .pipe($.sourcemaps.write())
     .pipe(gulp.dest(src))
     .pipe(reload({stream: true}));
+});
+
+gulp.task('wiredep', () => {
+  gulp.src([src + '/header.php', src + '/footer.php'])
+    .pipe(wiredep())
+    .pipe(gulp.dest(src + '/'));
+
+  gulp.src(src + '/scss/style.scss')
+    .pipe(wiredep())
+    .pipe(gulp.dest(src + '/scss'));
+
+  gulp.src(src + '/functions.php')
+    .pipe(wiredep({
+      fileTypes: {
+        php: {
+          block: /(([ \t ]*)\/\/\s*bower:*(\S*))(\n|\r|.)*?(\/\/\s*endbower)/gi,
+          replace: {
+            js: function(filePath) {
+              return "wp_enqueue_script( 'whiteboard-" + filePath.split('/')[1] + "', get_template_directory_uri() . '/" + filePath + "', array(), '20120206', true );";
+            }
+          }
+        }
+      }
+    }))
+    .pipe(gulp.dest(src + '/'));
+});
+
+gulp.task('useref', () => {
+
 });
 
 gulp.task('serve', () => {

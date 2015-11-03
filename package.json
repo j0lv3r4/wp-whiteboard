@@ -33,6 +33,10 @@
     "gulp-sass": "^2.0.4",
     "gulp-size": "^2.0.0",
     "gulp-sourcemaps": "^1.5.2",
-    "gulp-uglify": "^1.4.1"
+    "gulp-uglify": "^1.4.1",
+    "gulp-useref": "^2.0.1"
+  },
+  "dependencies": {
+    "wiredep": "^3.0.0-beta"
   }
 }
