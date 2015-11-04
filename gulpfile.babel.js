@@ -43,7 +43,7 @@ gulp.task('inject', () => {
     .pipe(gulp.dest(src + '/'));
 });
 
-gulp.task('serve', () => {
+gulp.task('serve', ['wiredep', 'inject', 'sass'], () => {
   browserSync({
     notify: false,
     port: 9001,
