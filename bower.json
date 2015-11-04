@@ -21,14 +21,13 @@
     "tests"
   ],
   "dependencies": {
-    "hyx.scss": "~2.0.0",
     "normalize-css": "normalize.css#~3.0.3",
-    "lodash": "~3.10.1",
-    "jquery": "~2.1.4"
+    "tequila.scss": "~3.0.0"
   },
   "install": {
     "path": {
       "js": "js/vendors"
     }
-  }
+  },
+  "devDependencies": {}
 }

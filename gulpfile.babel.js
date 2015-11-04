@@ -12,7 +12,7 @@ const src = '.';
 const dest = '../' + themeName;
 
 gulp.task('sass', () => {
-  return gulp.src(src + '/scss/**/*.scss')
+  gulp.src(src + '/scss/**/*.scss')
     .pipe($.plumber())
     .pipe($.sourcemaps.init())
     .pipe($.sass({
@@ -26,28 +26,9 @@ gulp.task('sass', () => {
 });
 
 gulp.task('wiredep', () => {
-  // gulp.src([src + '/header.php', src + '/footer.php'])
-  //   .pipe(wiredep())
-  //   .pipe(gulp.dest(src + '/'));
-
   gulp.src(src + '/scss/style.scss')
     .pipe(wiredep())
     .pipe(gulp.dest(src + '/scss'));
-
-  // gulp.src(src + '/functions.php')
-  //   .pipe(wiredep({
-  //     fileTypes: {
-  //       php: {
-  //         block: /(([ \t ]*)\/\/\s*bower:*(\S*))(\n|\r|.)*?(\/\/\s*endbower)/gi,
-  //         replace: {
-  //           js: function(filePath) {
-  //             return "wp_enqueue_script( 'whiteboard-" + filePath.split('/')[1] + "', get_template_directory_uri() . '/" + filePath + "', array(), '20120206', true );";
-  //           }
-  //         }
-  //       }
-  //     }
-  //   }))
-  //   .pipe(gulp.dest(src + '/'));
 });
 
 gulp.task('inject', () => {
@@ -61,7 +42,6 @@ gulp.task('inject', () => {
     }))
     .pipe(gulp.dest(src + '/'));
 });
-
 
 gulp.task('serve', () => {
   browserSync({
@@ -81,5 +61,7 @@ gulp.task('serve', () => {
   ]).on('change', reload);
 
   gulp.watch(src + '/scss/**/*.scss', ['sass']);
+  gulp.watch(src + '/js/**/*.js', ['inject']);
+  gulp.watch('bower.json', ['wiredep']);
   gulp.watch('gulpfile.babel.js').on('change', reload);
 });
