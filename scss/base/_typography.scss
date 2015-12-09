@@ -1,4 +1,4 @@
-/* 
+/*
  * Typography
  */
 
@@ -8,32 +8,46 @@ h3,
 h4,
 h5,
 h6 {
-	margin-top: $wb-text-margin-top;
-	margin-bottom: 0.382#{$wb-base-unit};
-	line-height: $wb-headings-line-height;
-	text-rendering: optimizeLegibility;
+  margin-top: $wb-text-margin-top;
+  margin-bottom: .382#{$wb-base-unit};
+  line-height: $wb-headings-line-height;
+  text-rendering: optimizeLegibility;
 }
 
 /* Headings specific font size */
-h1 { font-size: $wb-font-size-h1;  }
-h2 { font-size: $wb-font-size-h2;  }
-h3 { font-size: $wb-font-size-h3;  }
-h4 { font-size: $wb-font-size-h4;  }
-h5 { font-size: $wb-font-size-h5;  }
+h1 {
+  font-size: $wb-font-size-h1;
+}
+
+h2 {
+  font-size: $wb-font-size-h2;
+}
+
+h3 {
+  font-size: $wb-font-size-h3;
+}
+
+h4 {
+  font-size: $wb-font-size-h4;
+}
+
+h5 {
+  font-size: $wb-font-size-h5;
+}
 
 /* Paragraph */
 p {
-	margin-top: $wb-text-margin-top;
-	margin-bottom: $wb-baseline;
+  margin-top: $wb-text-margin-top;
+  margin-bottom: $wb-baseline;
 }
 
 .lead {
-	color: $wb-gray-light;
-	font-size: 1.125#{$wb-base-unit};
+  color: $wb-gray-light;
+  font-size: 1.125#{$wb-base-unit};
 }
 
 small {
-	font-size: 90%;
+  font-size: 90%;
 }
 
 /*
@@ -43,53 +57,55 @@ small {
  */
 nav ul,
 nav ol {
-	list-style: none;
-	margin-left: 0;
-	padding-left: 0;
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
 }
 
-ul, ol, dl {
-	margin-bottom: $wb-text-margin-bottom;
-	margin-top: 0;
-	line-height: $wb-line-height;
+ul,
+ol,
+dl {
+  margin-bottom: $wb-text-margin-bottom;
+  margin-top: 0;
+  line-height: $wb-line-height;
 }
 
 li > ul,
 li > ol {
-	margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 /* Code */
 pre {
-	margin-top: 0;
-	margin-bottom: 0;
-	white-space: pre-wrap;
+  margin-top: 0;
+  margin-bottom: 0;
+  white-space: pre-wrap;
 }
 
 code,
 kbd,
 pre,
 samp {
-	font-family: $wb-mono-font;
+  font-family: $wb-mono-font;
 }
 
 /* Quotes */
 blockquote {
-	padding-left: 1.25#{$wb-base-unit};
-	margin: 1#{$wb-base-unit} 0;
-	font-style: italic;
-	border-left: 5px solid $wb-gray-lighter;
-}
+  padding-left: 1.25#{$wb-base-unit};
+  margin: 1#{$wb-base-unit} 0;
+  font-style: italic;
+  border-left: 5px solid $wb-gray-lighter;
 
-blockquote p:last-child {
-	margin-bottom: 0;
+  p:last-child {
+    margin-bottom: 0;
+  }
 }
 
 /* Abbreviations */
 abbr {
-	cursor: help;
-	font-variant: small-caps;
-	font-weight: bold;
+  cursor: help;
+  font-variant: small-caps;
+  font-weight: bold;
   text-transform: lowercase;
-	letter-spacing: 0.1em;
+  letter-spacing: .1em;
 }

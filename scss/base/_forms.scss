@@ -1,7 +1,7 @@
-/* 
+/*
  * Forms
  *
- * Based on FormHack v1.0.0 (formhack.io) 
+ * Based on FormHack v1.0.0 (formhack.io)
  */
 
 /* Global */
@@ -26,13 +26,13 @@
 
   label {
     display: $wb-form-display;
-		margin-bottom: 0;
+    margin-bottom: 0;
   }
-}
 
-/* Input & textarea  */
-.form-base {
-	/* Fields with standard width */
+
+  /* Input & textarea  */
+
+  /* Fields with standard width */
   input[type="text"],
   input[type="email"],
   input[type="password"],
@@ -75,11 +75,9 @@
   input[list] {
     -webkit-appearance: none;
   }
-}
 
-/* Other */
+  /* Other */
 
-.form-base {
   textarea {
     -webkit-appearance: none;
     overflow: auto;
@@ -99,6 +97,7 @@
     height: $wb-form-input-height;
     -webkit-appearance: none;
   }
+
   input[type="search"]::-webkit-search-cancel-button,
   input[type="search"]::-webkit-search-decoration {
     -webkit-appearance: none;
@@ -109,12 +108,8 @@
     display: inline-block;
     vertical-align: middle;
   }
-}
 
-
-/* Select */
-
-.form-base {
+  /* Select */
   select {
     height: $wb-form-input-height;
 
@@ -140,19 +135,17 @@
   /* Fieldset */
 
   fieldset {
-		padding: 10px 25px;
-		border-radius: $wb-form-border-radius;
-		border: $wb-form-border-width $wb-form-border-style $wb-form-border-color;
-	}
+    padding: 10px 25px;
+    border-radius: $wb-form-border-radius;
+    border: $wb-form-border-width $wb-form-border-style $wb-form-border-color;
+  }
 
   legend {
-		padding: 0;
-		font-weight: inherit;
+    padding: 0;
+    font-weight: inherit;
   }
-}
 
-/* States */
-.form-base {
+  /* States */
   input[disabled],
   textarea[disabled],
   select[disabled],
@@ -178,25 +171,25 @@
 
 /* Field Group Styles */
 .field-group {
-	margin-bottom: 1em;
+  margin-bottom: 1em;
 }
 
 /* States & Feedback */
 .form-base {
-	.label-inline,
-	.checkbox-text {
-		display: inline-block;
-	}
+  .label-inline,
+  .checkbox-text {
+    display: inline-block;
+  }
 
-	.form-base-error,
-	.form-base-help {
-		margin: 0;
-		font-style: italic;
-		font-size: 80%;
-	}
+  .form-base-error,
+  .form-base-help {
+    margin: 0;
+    font-style: italic;
+    font-size: 80%;
+  }
 
 
-	.form-base-error {
-		color: brown;
-	}
+  .form-base-error {
+    color: brown;
+  }
 }

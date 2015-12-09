@@ -27,7 +27,7 @@ linters:
     enabled: true
 
   Comment:
-    enabled: true
+    enabled: false
 
   DebugStatement:
     enabled: true
@@ -71,7 +71,7 @@ linters:
     enabled: true
 
   IdSelector:
-    enabled: true
+    enabled: false
 
   ImportantRule:
     enabled: false
@@ -148,7 +148,7 @@ linters:
 
   SelectorFormat:
     enabled: true
-    convention: hyphenated_lowercase # or 'strict_BEM', or 'hyphenated_BEM', or 'snake_case', or 'camel_case', or a regex pattern
+    convention: [hyphenated_lowercase, snake_case] # or 'strict_BEM', or 'hyphenated_BEM', or 'snake_case', or 'camel_case', or a regex pattern
 
   Shorthand:
     enabled: true
