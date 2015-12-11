@@ -1,22 +1,22 @@
-/* 
+/*
  * Main styling
  */
 
 .container {
-	max-width: 60em;
-	margin: 0 auto;
-	padding-left: 1em;
-	padding-right: 1em;
+  max-width: 60em;
+  margin: 0 auto;
+  padding-left: 1em;
+  padding-right: 1em;
 }
 
 .site-main {}
 
 .entry-meta {
-	text-transform: uppercase;
-	color: #999;
+  text-transform: uppercase;
+  color: $wb-gray-light;
 
-	a {
-		color: #444;
-	}
+  a {
+    color: $wb-gray;
+  }
 }
 

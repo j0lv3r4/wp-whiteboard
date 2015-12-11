@@ -158,7 +158,7 @@
   textarea:focus,
   select:focus,
   option:focus,
-  button:focus  {
+  button:focus {
     background-color: $wb-form-focus-bg-color;
     border-color: $wb-form-focus-border-color;
   }
@@ -167,15 +167,8 @@
   input[type="radio"]:focus {
     outline: $wb-form-focus-border-color solid 2px;
   }
-}
 
-/* Field Group Styles */
-.field-group {
-  margin-bottom: 1em;
-}
-
-/* States & Feedback */
-.form-base {
+  /* States & Feedback */
   .label-inline,
   .checkbox-text {
     display: inline-block;
@@ -188,8 +181,12 @@
     font-size: 80%;
   }
 
-
   .form-base-error {
-    color: brown;
+    color: $wb-form-error-color;
   }
+}
+
+/* Field Group Styles */
+.field-group {
+  margin-bottom: 1em;
 }
