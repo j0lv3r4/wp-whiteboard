@@ -1,0 +1,33 @@
+{
+  "name": "Whiteboard",
+  "description": "WordPress theme starter for quick development.",
+  "main": "index.php",
+  "authors": [
+    "Juan Olvera"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "WordPress",
+    "Gulp",
+    "Sass"
+  ],
+  "homepage": "https://github.com/thinkxl/whiteboard",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize-css": "normalize.css#~3.0.3",
+    "tequila.scss": "~3.0.0"
+  },
+  "install": {
+    "path": {
+      "js": "js/vendors"
+    }
+  },
+  "devDependencies": {}
+}

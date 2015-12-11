@@ -2,6 +2,7 @@
  * Grid setup
  */
 
+$gutter: 3%;
 @include namespace('col-');
 
 .col-1-1 { @include fraction(1/1); }

@@ -3,22 +3,21 @@
  */
 
 /* Alignments */
-
 .centered,
 .aligncenter {
-	@include center-block;
+  @include center-block;
 }
 
 .alignleft {
-	display: inline;
-	float: left;
-	margin-right: 1.5#{$wb-base-unit};
+  display: inline;
+  float: left;
+  margin-right: 1.5#{$wb-base-unit};
 }
 
 .alignright {
-	display: inline;
-	float: right;
-	margin-left: 1.5#{$wb-base-unit};
+  display: inline;
+  float: right;
+  margin-left: 1.5#{$wb-base-unit};
 }
 
 /*
@@ -26,14 +25,14 @@
  * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
  */
 .visuallyhidden {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
 }
 
 /*
@@ -49,10 +48,10 @@
  */
 .clearfix:before,
 .clearfix:after {
-    content: " "; /* 1 */
-    display: table; /* 2 */
+  content: ' '; /* 1 */
+  display: table; /* 2 */
 }
 
 .clearfix:after {
-    clear: both;
+  clear: both;
 }
