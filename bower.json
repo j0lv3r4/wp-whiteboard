@@ -21,7 +21,7 @@
     "tests"
   ],
   "dependencies": {
-    "normalize-css": "normalize.css#~3.0.3",
+    "normalize-css": "~3.0.3",
     "tequila.scss": "~3.0.0"
   },
   "install": {
