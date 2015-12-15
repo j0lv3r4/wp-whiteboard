@@ -13,6 +13,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 - Bower folder name to `vendors/`.
 
+### Fixed
+
+- Added the `.container` and `.row` classes on `search.php` and `single.php`.
+
 ## [1.2.0] - 2015-11-02
 
 ### Changed
