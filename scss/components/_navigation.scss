@@ -2,61 +2,31 @@
  * Navigation
  */
 
-/* Top navigation */
-.top-navigation {
-  padding: .3em 0;
-  background-color: $wb-gray;
-
-  .menu-item,
-  .page_item {
-    border: 0;
-
-    a {
-      color: $wb-white;
-    }
-  }
-
-  .sub-menu,
-  .children {
-    background-color: $wb-gray-dark;
-  }
-
-  .menu ul {
-    float: left;
-    margin-bottom: 0;
-  }
-}
-
-#menu-top {
-  margin: 0;
-  float: right;
-}
-
 /* Main navigation */
 .main-navigation {
+  float: right !important;
   padding: .618em 0;
-  background-color: $wb-gray-light;
 }
 
 .nav-menu {
-  float: left;
+  float: right;
   margin-bottom: 0;
 }
 
 .menu-item,
 .page_item {
-  margin-left: .5em;
-  padding-left: .5em;
-  border-left: 1px solid $wb-gray;
 
   a {
+    padding: .5em 1em;
     color: $wb-gray-darker;
+    font-family: $wb-factoria;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-left: 1px solid $wb-gray-lighter;
   }
 
-  &:first-child {
-    border-left: 0;
-    margin-left: 0;
-    padding-left: 0;
+  &:last-child {
+    border-right: 1px solid $wb-gray-lighter;
   }
 }
 

@@ -15,7 +15,7 @@ $wb-body-bg: #fff !default;
 // Colors
 
 // Brand colors
-$wb-brand-primary: #00f;
+$wb-brand-primary: #2661ab;
 
 // Custom colors
 $wb-gray-base: #000;
@@ -28,7 +28,10 @@ $wb-white: #fff;
 
 // Typography
 
-$wb-body-font: 'Roboto', sans-serif;
+$wb-open-sans: 'open-sans', sans-serif;
+$wb-proxima-nova: 'proxima-nova', sans-serif;
+$wb-factoria: 'factoria', sans-serif;
+$wb-body-font: $wb-proxima-nova;
 $wb-mono-font: 'Menlo', Inconsolata, Consolas, Monaco, monospace;
 
 $wb-font-size: 16px;
@@ -41,7 +44,7 @@ $wb-text-margin-bottom: $wb-baseline !default;
 
 $wb-link-color: $wb-brand-primary !default;
 $wb-link-decoration: none;
-$wb-link-hover-decoration: underline;
+$wb-link-hover-decoration: none;
 $wb-link-hover-color: darken($wb-link-color, 15%) !default;
 
 $wb-font-size-h1: 2.225#{$wb-base-unit};

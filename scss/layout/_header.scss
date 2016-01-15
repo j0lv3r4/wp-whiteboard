@@ -7,12 +7,26 @@
 }
 
 .site-header {
-  padding: 2em 0;
-  color: $wb-white;
-  background-color: $wb-gray-darker;
+  padding: 0;
+  color: $wb-gray-darker;
+}
+
+.site-branding {
+  position: relative;
+}
+
+.site-logo {
+  position: absolute;
+  z-index: 1000;
+  padding: .5em 1em;
+  // border: 1px solid $wb-gray-lighter;
+  background-color: $wb-white;
+  box-shadow: 0 0 1em rgba(0, 0, 0, 0.1);
 }
 
 .site-title {
+  @extend .visuallyhidden;
+
   margin-top: 0;
 
   a {
@@ -21,6 +35,40 @@
 }
 
 .site-description {
+  @extend .visuallyhidden;
+
   color: $wb-white;
   font-weight: normal;
+}
+
+/*
+ * Top nav buttons
+ */
+
+.top-nav-button {
+  @extend %button-static;
+
+  width: 100%;
+  color: $wb-white;
+  font-size: 1.2em;
+  font-family: $wb-proxima-nova;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 0;
+  border-right: 2px solid $wb-brand-primary;
+  background-color: $wb-gray-darker;
+
+  span {
+    font-family: $wb-open-sans;
+    font-size: 0.8em;
+    font-weight: normal;
+    font-style: italic;
+    text-transform: lowercase;
+  }
+}
+
+.top-nav-button.no-border {
+  border-right: 0;
 }
