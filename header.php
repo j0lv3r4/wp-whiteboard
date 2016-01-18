@@ -32,15 +32,15 @@
   <div class="top-nav">
     <div class="row">
       <div class="span-1-3">
-        <a class="top-nav-button" href="#">Visit <span>the</span> Woodlands Site</a>
+        <a class="top-nav-button" href="/the-woodlands">Visit <span>the</span> Woodlands Site</a>
       </div> <!-- .span-1-3 -->
 
       <div class="span-1-3">
-        <a class="top-nav-button" href="#">Visit <span>the</span> Montgomery Site</a>
+        <a class="top-nav-button" href="/montgomery">Visit <span>the</span> Montgomery Site</a>
       </div> <!-- .span-1-3 -->
 
       <div class="span-1-3">
-        <a class="top-nav-button no-border" href="#">Visit <span>the</span> Kingwood Site</a>
+        <a class="top-nav-button no-border" href="/kingwood">Visit <span>the</span> Kingwood Site</a>
       </div> <!-- .span-1-3 -->
     </div> <!-- .row -->
   </div> <!-- .top-nav -->
@@ -56,7 +56,7 @@
           <?php endif; ?>
           <p class="site-description"><?php bloginfo( 'description' ); ?></p>
 
-          <img class="site-logo" src="<?php echo get_template_directory_uri(); ?>/img/texas_rush_logo.jpg">
+          <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img class="site-logo" src="<?php echo get_template_directory_uri(); ?>/img/texas_rush_logo.jpg"></a>
         </div> <!-- .site-branding -->
 
         <nav id="site-navigation" class="col-9 main-navigation" role="navigation">

@@ -107,6 +107,36 @@ function whiteboard_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Woodlands Sidebar', 'whiteboard' ),
+		'id'            => 'woodlands-sidebar',
+		'description'   => '',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Montgomery Sidebar', 'whiteboard' ),
+		'id'            => 'montgomery-sidebar',
+		'description'   => '',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Kingwood Sidebar', 'whiteboard' ),
+		'id'            => 'kingwood-sidebar',
+		'description'   => '',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
 }
 add_action( 'widgets_init', 'whiteboard_widgets_init' );
 
@@ -154,3 +184,27 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+/**
+ * Custom functions
+ */
+
+function tr_list_child_pages() {
+  global $post;
+
+  if ( is_page() && $post->post_parent ) {
+    $childpages = wp_list_pages(
+      'sort_column=menu_order&title_li=&child_of=' . $post->post_parent . '&echo=0'
+    );
+  } else {
+    $childpages = wp_list_pages( 'sort_column=menu_order&title_li=&child_of=' . $post->ID . '&echo=0'  );
+
+    if ( $childpages ) {
+      $string = '<ul>' . $childpages . '</ul>';
+    }
+  }
+
+  return $string;
+}
+
+add_shortcode('tr_childpages', 'tr_list_child_pages');

@@ -3,8 +3,8 @@
  */
 
 #secondary {
-  padding: 2em 1em 1em;
-  background-color: $wb-gray-lighter;
+  padding: 1em;
+  // background-color: $wb-gray-lighter;
 
   .search-submit {
     display: none;
@@ -26,6 +26,32 @@
       padding-left: 0;
       margin-left: 0;
       list-style: none;
+    }
+  }
+}
+
+/* Sidebar Navigation */
+
+.location-page-title {
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+#secondary {
+  .page_item,
+  .location-page-item {
+    a {
+      display: block;
+      margin-bottom: 2px;
+      padding: .2em .5em;
+      font-family: $wb-factoria;
+      color: $wb-white;
+      text-transform: uppercase;
+      background-color: $wb-brand-primary;
+
+      &:hover {
+        background-color: darken($wb-brand-primary, 5%);
+      }
     }
   }
 }
