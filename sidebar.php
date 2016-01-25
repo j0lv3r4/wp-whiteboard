@@ -7,6 +7,21 @@
  * @package whiteboard
  */
 
+function the_parent_slug() {
+  global $post;
+
+  if ($post->post_parent == 0) return '';
+
+  $post_data = get_post($post->post_parent);
+  return $post_data->post_name;
+}
+
+function top_level_parent() {
+  $parent = array_reverse(get_post_ancestors($post->ID));
+  $first_parent = get_page($parent[0]);
+  return $first_parent->post_name;
+}
+
 if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 	return;
 }
@@ -37,19 +52,51 @@ $cat_slug = $cats[0]->slug;
       </nav>
     </div><!-- #secondary -->
 
-  <?php elseif ( ($cat_slug == 'the-woodlands') || ($cat_slug == 'montgomery') || ($cat_slug == 'kingwood') ): ?>
+  <?php elseif ( $cat_slug == 'staff-member' ): ?>
 
-  <div id="secondary" class="col-4 widget-area" role="complementary">
-  <h4 class="location-page-title"><?php echo $cat_name; ?> Navigation</h4>
+  <?php
+    // if parent page is staff and category is staff-member then show
+    // if parent page is staff and category is not staff-member then don't show
+  ?>
 
-    <nav class="location-page-nav">
-      <ul class="location-page-list">
-        <li class="location-page-item"><a href="/<?php echo $cat_slug; ?>/recreational">Recreational</a></li>
-        <li class="location-page-item"><a href="/<?php echo $cat_slug; ?>/youth-academy">Youth Academy</a></li>
-        <li class="location-page-item"><a href="/<?php echo $cat_slug; ?>/competitive">Competitive</a></li>
-      </ul>
-    </nav>
-  </div><!-- #secondary -->
+    <div id="secondary" class="col-4 widget-area" role="complementary">
+      <nav class="location-page-nav">
+        <ul class="location-page-list">
+          <?php wp_list_pages('title_li=&child_of=6'); ?>
+        </ul>
+      </nav>
+    </div><!-- #secondary -->
+
+  <?php elseif ( ($cat_slug == 'montgomery') || (top_level_parent() == 'montgomery')): ?>
+
+    <div id="secondary" class="col-4 widget-area" role="complementary">
+      <nav class="location-page-nav">
+        <ul class="location-page-list">
+          <?php wp_list_pages('title_li=&child_of=33'); ?>
+        </ul>
+      </nav>
+    </div><!-- #secondary -->
+
+  <?php elseif ( ($cat_slug == 'the-woodlands') || (top_level_parent() == 'the-woodlands')): ?>
+
+    <div id="secondary" class="col-4 widget-area" role="complementary">
+      <nav class="location-page-nav">
+        <ul class="location-page-list">
+          <?php wp_list_pages('title_li=&child_of=30'); ?>
+        </ul>
+      </nav>
+    </div><!-- #secondary -->
+
+  <?php elseif ( ($cat_slug == 'kingwood') || (top_level_parent() == 'kingwood')): ?>
+
+    <div id="secondary" class="col-4 widget-area" role="complementary">
+      <nav class="location-page-nav">
+        <ul class="location-page-list">
+          <?php wp_list_pages('title_li=&child_of=41'); ?>
+        </ul>
+      </nav>
+    </div><!-- #secondary -->
+
 
   <?php else: ?>
 
