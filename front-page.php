@@ -18,11 +18,11 @@ get_header(); ?>
   <section class="home-page-buttons">
     <div class="row">
       <div class="span-1-2">
-        <a class='home-page-button' href="#">US Soccer Development Academy <span>(USSDA)</span></a>
+        <a class='home-page-button' href="/the-woodlands/competitive/ussda-academy-boys-u14-u16-u18/">US Soccer Development Academy <span>(USSDA)</span></a>
       </div> <!-- .span-1-2 -->
 
       <div class="span-1-2">
-        <a class="home-page-button" href="#">Elite Clubs National League <span>(ECNL)</span></a>
+        <a class="home-page-button" href="/the-woodlands/competitive/ecnl-girls-u14-u18/">Elite Clubs National League <span>(ECNL)</span></a>
       </div> <!-- .span-1-2 -->
     </div> <!--  .row -->
   </section> <!-- .home-page-buttons -->
@@ -31,27 +31,76 @@ get_header(); ?>
 
   <section class="field-status-section">
     <div class="container">
+
       <h2>Field Status</h2>
+<?php
+// WP_Query arguments
+$args = array (
+  'post_type'              => array( 'fs_post_type' ),
+  'order'                  => 'ASC',
+  'orderby'                => 'menu_order',
+);
 
-      <p><small>Last Update: Thursday, Nov 12, 2015, 3:34 PM</small></p>
+// The Query
+$query = new WP_Query( $args );
 
-      <div class="row">
-        <div class="col-1-2">
-          <a class="field-status-button field-status-closed" href="#">Bear Branch Sports Complex (CLOSED)</a>
-          <a class="field-status-button field-status-open" href="#">Shadowbend Park (OPEN)</a>
-          <a class="field-status-button field-status-closed" href="#">WendtwoodsPark (CLOSED)</a>
-          <a class="field-status-button field-status-open" href="#">Kingwood - The Zone (OPEN)</a>
-          <a class="field-status-button field-status-open" href="#">Carl Barton (OPEN)</a>
-        </div> <!-- .col-1-2 -->
+// https://secure.php.net/manual/en/function.array-push.php
+$times_arr = array();
+foreach ($query->posts as $p) {
+  $modified = $p->post_modified;
+  array_push($times_arr, $modified);
+}
 
-        <div class="col-1-2">
-          <a class="field-status-button field-status-open" href="#">Alden Bridge Sports Fields (OPEN)</a>
-          <a class="field-status-button field-status-open" href="#">Falconwing Park (OPEN)</a>
-          <a class="field-status-button field-status-closed" href="#">Lents Family Park West (OPEN)</a>
-          <a class="field-status-button field-status-closed" href="#">Fellowship of Montgomery Fields (OPEN)</a>
-        </div> <!-- .col-1-2 -->
-      </div> <!-- .row -->
-    </div> <!-- .container -->
+// https://stackoverflow.com/questions/11012891/how-to-get-most-recent-date-from-an-array-of-dates#answer-11013478
+$max = max(array_map('strtotime', $times_arr));
+echo "<p><small>Last Update: " . date('D, F j, Y g:i a', $max) . "</small></p>";
+
+//echo "<pre><code>";
+//echo print_r($query->posts);
+//echo "</code></pre>";
+
+echo "<div class='row'>";
+
+echo "<div class='col-1-2'>";
+// The Loop
+if ( $query->have_posts() ) {
+  while ( $query->have_posts() ) {
+    $query->the_post();
+    $title = get_the_title();
+
+    if (get_field("column") == "left") {
+      echo "<a class='field-status-button field-status-" . get_field("status") . "' href='" . get_field("google_map_url") . "'>" . $title . " (" . strtoupper(get_field("status")) . ")</a>";
+    }
+  }
+} else {
+  // no posts found
+  echo "No posts";
+}
+echo "</div> <!-- .col-1-2 -->";
+
+echo "<div class='col-1-2'>";
+// The Loop
+if ( $query->have_posts() ) {
+  while ( $query->have_posts() ) {
+    $query->the_post();
+    $title = get_the_title();
+
+    if (get_field("column") == "right") {
+      echo "<a class='field-status-button field-status-" . get_field("status") . "' href='" . get_field("google_map_url") . "'>" . $title . " (" . strtoupper(get_field("status")) . ")</a>";
+    }
+  }
+} else {
+  // no posts found
+  echo "No posts";
+}
+echo "</div> <!-- .col-1-2 -->";
+
+echo "</div> <!-- .row -->";
+
+// Restore original Post Data
+wp_reset_postdata();
+?>
+
   </section> <!-- .field-status-section -->
 
   <section class="sponsors-section">
