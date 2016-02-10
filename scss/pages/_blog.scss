@@ -2,10 +2,44 @@
  * Blog page
  */
 
+.archive,
+.category,
+.single,
 .blog {
   article {
     margin-bottom: 4em;
     padding-bottom: 2em;
     border-bottom: 1px dotted $wb-gray-light;
+  }
+
+  #secondary {
+    margin-top: 2em;
+    padding: 1em 2em;
+    border: 4px solid $wb-gray-lighter;
+    border-radius: 4px;
+    background-color: lighten($wb-gray-lighter, 5%);
+
+    .screen-reader-text {
+      @extend .visuallyhidden;
+    }
+
+    .search-field {
+      margin-top: .5em;
+      width: 90%;
+      padding: .2em 1em;
+    }
+
+    h2.widget-title {
+      padding-bottom: 0;
+      border: 0;
+    }
+  }
+
+  .page-title {
+    @extend .visuallyhidden;
+  }
+
+  #main {
+    margin-top: 2em;
   }
 }
