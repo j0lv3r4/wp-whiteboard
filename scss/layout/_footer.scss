@@ -4,6 +4,14 @@
 
 .site-footer {
   padding: 2em 0;
-  background-color: $wb-gray-dark;
-  color: $wb-white;
+  background-color: $wb-gray-lighter;
+  color: $wb-gray-darker;
+
+  h3 {
+    font-size: 1em;
+  }
+
+  p {
+    font-size: 0.8em;
+  }
 }

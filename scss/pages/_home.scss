@@ -1,3 +1,95 @@
-/*
+/**
  * Home page
  */
+
+.home section {
+  h2 {
+    font-family: $wb-factoria;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+}
+
+/*
+ * Utils only for home page
+ */
+
+%separator {
+  padding-top: 3em;
+  padding-bottom: 3em;
+}
+
+
+/*
+ * Home page buttons
+ */
+
+.home-page-button {
+  @extend .top-nav-button;
+
+  span {
+    text-transform: uppercase;
+    font-style: normal;
+  }
+}
+
+/*
+ * Registration section
+ */
+
+.registration-section {
+  @extend %separator;
+
+  color: $wb-white;
+  text-align: center;
+  background-color: $wb-brand-primary;
+
+  h2 {
+    margin-top: 0;
+  }
+}
+
+.register-button {
+  @extend %button-static;
+
+  color: $wb-white;
+  border: 1px solid $wb-white;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.registration-box {
+  max-width: 50%;
+  margin: 0 auto;
+}
+
+/*
+ * Field status
+ */
+
+.field-status-section {
+  @extend %separator;
+
+  text-align: center;
+}
+
+.field-status-button {
+  margin-bottom: .5em;
+  display: block;
+  padding: 1em;
+  color: $wb-white;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+$wb-field-status-open: #51d04d;
+$wb-field-status-closed: #ed2c1f;
+
+.field-status-closed {
+  background-color: $wb-field-status-closed;
+}
+
+.field-status-open {
+  background-color: $wb-field-status-open;
+}

@@ -9,10 +9,20 @@
 
 get_header(); ?>
 
+  <div class="page-header-section">
+    <div class="page-header-bg">
+      <div class="container">
+        <div class="row">
+          <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+        </div> <!-- .row -->
+      </div> <!-- .container -->
+    </div> <!-- .page-header-bg -->
+  </div> <!-- .page-header-image -->
+
 	<div id="primary" class="content-area">
     <div class="container">
       <div class="row">
-        <main id="main" class="site-main" role="main">
+        <main id="main" class="col-8 site-main" role="main">
 
         <?php if ( have_posts() ) : ?>
 

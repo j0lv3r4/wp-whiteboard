@@ -4,7 +4,7 @@ import browserSync from 'browser-sync';
 import del from 'del';
 import {stream as wiredep} from 'wiredep';
 
-const devUrl = 'whiteboard.dev';
+const devUrl = 'texasrush.dev';
 const themeName = 'whiteboard';
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
