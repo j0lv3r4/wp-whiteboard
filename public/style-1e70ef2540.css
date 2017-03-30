@@ -476,6 +476,10 @@ a.button:active {
   background-color: #9c9c9c;
 }
 
+body {
+  background: red;
+}
+
 a.button-primary,
 .button-primary {
   background-color: #0078e7;

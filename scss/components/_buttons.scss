@@ -39,22 +39,21 @@ a.button {
   @include button($wb-btn-default-bg, $wb-btn-default-color);
 }
 
-
 a.button-primary,
 .button-primary {
-  @extend %button;
+  @extend %button-static;
 
   @include button($wb-btn-primary-bg, $wb-btn-primary-color);
 }
 
 .button-small {
-  @extend %button;
+  @extend %button-static;
 
   font-size: $wb-btn-small-font-size !important;
 }
 
 .button-large {
-  @extend %button;
+  @extend %button-static;
 
   font-size: $wb-btn-large-font-size !important;
 }

@@ -5,7 +5,6 @@ elixir(function(mix) {
   mix.sass('./scss/style.scss', './style.css');
 
   mix.scripts([
-    './js/customizer.js',
     './js/navigation.js',
     './js/skip-link-focus-fix.js'
   ],

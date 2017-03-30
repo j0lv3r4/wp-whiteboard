@@ -115,6 +115,7 @@ add_action( 'widgets_init', 'whiteboard_widgets_init' );
  */
 function whiteboard_scripts() {
 	wp_enqueue_style( 'whiteboard-style', get_stylesheet_uri() );
+
 	wp_enqueue_script( 'whiteboard-scripts', get_template_directory_uri() . '/scripts.js', array(), '20120206', true );
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
