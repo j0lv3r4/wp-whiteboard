@@ -11,7 +11,7 @@ elixir(function(mix) {
     './scripts.js'
   );
 
-  mix.version(['./style.css', './scripts.js']);
+  // mix.version(['./style.css', './scripts.js']);
 
   mix.browserSync({
     notify: false,
