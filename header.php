@@ -43,7 +43,14 @@
 		<nav id="site-navigation" class="main-navigation" role="navigation">
       <div class="container">
         <div class="row">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'whiteboard' ); ?></button>
+			<button class="menu-toggle" aria-controls="primary-menu" a754962ria-expanded="false">
+				<svg class="menu-toggle-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+					<line x1="3" y1="12" x2="21" y2="12"/>
+					<line x1="3" y1="6" x2="21" y2="6"/>
+					<line x1="3" y1="18" x2="21" y2="18"/>
+				</svg>
+				<span><?php esc_html_e( 'Menu', 'whiteboard' ); ?></span>
+			</button>
 			<?php wp_nav_menu( array(
 				'theme_location' => 'primary',
 				'menu_id' => 'primary-menu',

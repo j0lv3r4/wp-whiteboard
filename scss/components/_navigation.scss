@@ -3,8 +3,29 @@
  */
 
 /*
- * Basic layout and styling for navigation
+ * Basic layout and styling for navigation (mobile first)
  */
+
+$wb-mobile-nav-link-bg: $wb-brand-primary;
+
+/* Mobile nav toggle menu */
+button.menu-toggle {
+  width: 100%;
+  padding: .5em 1em;
+  color: $wb-white;
+  background-color: $wb-mobile-nav-link-bg;
+  border-radius: 2px;
+
+  .menu-toggle-icon {
+    float: right;
+  }
+
+  span {
+    float: left;
+    margin-top: .4em;
+    text-transform: uppercase;
+  }
+}
 
 .main-navigation {
   padding: .618em 0;
@@ -15,21 +36,37 @@
   margin-top: .5em;
   width: 100%;
   position: relative;
-  display: block !important; // remove
   margin-bottom: 0;
 }
 
-$wb-mobile-nav-link-bg: $wb-brand-primary;
+.menu-item-has-children:hover > .sub-menu,
+.page_item-has-children:hover > .sub-menu {
+  display: block !important;
+}
 
 .menu-item,
 .page_item {
+  position: relative;
+
   a {
     display: inline-block;
     padding: .5em 1em;
     width: 100%;
     margin-bottom: 1px;
-    color: #fff;
+    color: $wb-white;
     background-color: $wb-mobile-nav-link-bg;
+
+    &:hover {
+      @include respond-to(48em) {
+        background-color: darken($wb-mobile-nav-link-bg, 10%);
+      }
+    }
+
+    @include respond-to(48em) {
+      float: left;
+      width: auto;
+      padding: .3em 1em;
+    }
   }
 
   &:first-child {
@@ -37,11 +74,16 @@ $wb-mobile-nav-link-bg: $wb-brand-primary;
     margin-left: 0;
     padding-left: 0;
   }
+
+  @include respond-to(48em) {
+    float: left;
+  }
 }
 
 /*
  * Dropdown structure
  */
+
 .menu-item,
 .page_item {
   .dropdown-icon-link {
@@ -52,6 +94,10 @@ $wb-mobile-nav-link-bg: $wb-brand-primary;
     text-align: center;
     border-left: 1px solid darken($wb-mobile-nav-link-bg, 15%);
     background-color: darken($wb-mobile-nav-link-bg, 10%);
+
+    @include respond-to(48em) {
+      display: none !important;
+    }
   }
 
   .dropdown-icon {
@@ -61,6 +107,10 @@ $wb-mobile-nav-link-bg: $wb-brand-primary;
 
   &.menu-item-has-children > a:not(.dropdown-icon-link) {
     width: 90% !important;
+
+    @include respond-to(48em) {
+      width: 100% !important;
+    }
   }
 
   // If menu item has no children then hide the dropdown icon
@@ -71,10 +121,32 @@ $wb-mobile-nav-link-bg: $wb-brand-primary;
   }
 }
 
-// TODO:
-// Figure out a better way to do this, somehow inheriting styles
+.show-children > .sub-menu,
+.show-children > .children {
+  display: block !important;
+}
+
 .sub-menu,
 .children {
+  width: 10em;
+  display: none;
+
+  .menu-item,
+  .page_item {
+    border: 0;
+    display: block;
+    float: none;
+
+    a {
+      @include respond-to(48em) { 
+        padding: .5em 1em !important;
+        width: 100%;
+        font-size: .9em;
+        float: none;
+      }
+    }
+  }
+
   a:not(.dropdown-icon-link) {
     padding-left: 3em;
   }
@@ -84,30 +156,16 @@ $wb-mobile-nav-link-bg: $wb-brand-primary;
     a:not(.dropdown-icon-link) {
       padding-left: 6em;
     }
+
+    @include respond-to(48em) {
+      top: 0%;
+      left: 101%;
+    }
   }
-}
 
-.show-children > .sub-menu,
-.show-children > .children {
-  display: block !important;
-}
-
-// .nav-menu > li:first-child,
-// .menu-item,
-// .page_item {
-//   float: left;
-// }
-
-/* Dropdown menu */
-.sub-menu,
-.children {
-  display: none;
-
-  .menu-item,
-  .page_item {
-    border: 0;
-    display: block;
-    float: none;
+  @include respond-to(48em) {
+    position: absolute;
+    top: 100%;
   }
 }
 
@@ -116,7 +174,7 @@ $wb-mobile-nav-link-bg: $wb-brand-primary;
 .main-navigation.toggled .nav-menu {
   display: block;
 
-  @include respond-to(36em) {
+  @include respond-to(48em) {
     display: none;
   }
 }
@@ -124,7 +182,7 @@ $wb-mobile-nav-link-bg: $wb-brand-primary;
 .main-navigation .nav-menu {
   display: none;
 
-  @include respond-to(36em) {
+  @include respond-to(48em) {
     display: block;
   }
 }

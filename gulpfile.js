@@ -6,7 +6,7 @@ elixir(function(mix) {
 
   mix.scripts([
     './js/scripts.js',
-    './js/customizer.js',
+    // './js/customizer.js',
     './js/navigation.js',
     './js/skip-link-focus-fix.js'
   ],
