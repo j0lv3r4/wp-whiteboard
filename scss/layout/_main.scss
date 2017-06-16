@@ -9,7 +9,11 @@
   padding-right: 1em;
 }
 
-.site-main {}
+.site-main {
+  .entry-title {
+    margin-top: 0;
+  }
+}
 
 .entry-meta {
   text-transform: uppercase;
@@ -20,3 +24,10 @@
   }
 }
 
+/*
+ * Home
+ */
+
+.home .entry-title {
+  display: none;
+}

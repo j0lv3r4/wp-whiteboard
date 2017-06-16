@@ -3,12 +3,9 @@
  */
 
 /*
- * Basic layout and styling for navigation (mobile first)
+ *  Mobile nav toggle menu 
  */
 
-$wb-mobile-nav-link-bg: $wb-brand-primary;
-
-/* Mobile nav toggle menu */
 button.menu-toggle {
   width: 100%;
   padding: .5em 1em;
@@ -27,21 +24,15 @@ button.menu-toggle {
   }
 }
 
-.main-navigation {
-  padding: .618em 0;
-}
+/*
+ * Basic layout and styling for navigation (mobile first)
+ */
 
 .nav-menu {
   float: left;
-  margin-top: .5em;
   width: 100%;
   position: relative;
   margin-bottom: 0;
-}
-
-.menu-item-has-children:hover > .sub-menu,
-.page_item-has-children:hover > .sub-menu {
-  display: block !important;
 }
 
 .menu-item,
@@ -84,6 +75,18 @@ button.menu-toggle {
  * Dropdown structure
  */
 
+.menu-item-has-children:hover > .sub-menu,
+.page_item-has-children:hover > .sub-menu {
+  @include respond-to(48em) {
+    display: block !important;
+  }
+}
+
+// We repeat these classes because here they are used to style dropdown components.
+// If we put basic styles (above) with these (dropdown) together, it'will end unreadable
+// and cluttered.
+
+/* Top level menu item */
 .menu-item,
 .page_item {
   .dropdown-icon-link {
@@ -128,7 +131,6 @@ button.menu-toggle {
 
 .sub-menu,
 .children {
-  width: 10em;
   display: none;
 
   .menu-item,
@@ -165,6 +167,7 @@ button.menu-toggle {
 
   @include respond-to(48em) {
     position: absolute;
+    width: 10em;
     top: 100%;
   }
 }

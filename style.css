@@ -641,9 +641,8 @@ object {
  * Navigation
  */
 /*
- * Basic layout and styling for navigation (mobile first)
+ *  Mobile nav toggle menu 
  */
-/* Mobile nav toggle menu */
 button.menu-toggle {
   width: 100%;
   padding: .5em 1em;
@@ -662,21 +661,14 @@ button.menu-toggle span {
   text-transform: uppercase;
 }
 
-.main-navigation {
-  padding: .618em 0;
-}
-
+/*
+ * Basic layout and styling for navigation (mobile first)
+ */
 .nav-menu {
   float: left;
-  margin-top: .5em;
   width: 100%;
   position: relative;
   margin-bottom: 0;
-}
-
-.menu-item-has-children:hover > .sub-menu,
-.page_item-has-children:hover > .sub-menu {
-  display: block !important;
 }
 
 .menu-item,
@@ -727,6 +719,14 @@ button.menu-toggle span {
 /*
  * Dropdown structure
  */
+@media only screen and (min-width: 48em) {
+  .menu-item-has-children:hover > .sub-menu,
+  .page_item-has-children:hover > .sub-menu {
+    display: block !important;
+  }
+}
+
+/* Top level menu item */
 .menu-item .dropdown-icon-link,
 .page_item .dropdown-icon-link {
   display: inline-block;
@@ -775,7 +775,6 @@ button.menu-toggle span {
 
 .sub-menu,
 .children {
-  width: 10em;
   display: none;
 }
 
@@ -826,6 +825,7 @@ button.menu-toggle span {
   .sub-menu,
   .children {
     position: absolute;
+    width: 10em;
     top: 100%;
   }
 }
@@ -903,13 +903,12 @@ tbody tr:nth-child(odd) th {
   background-color: #f2f2f2;
 }
 
-/*
+/**
  * Site footer
  */
 .site-footer {
-  padding: 2em 0;
-  background-color: #333;
-  color: #fff;
+  padding: 4em 0;
+  text-align: center;
 }
 
 [class^="col-"]:first-child {
@@ -1597,7 +1596,6 @@ tbody tr:nth-child(odd) th {
 
 .site-header {
   padding: 2em 0;
-  color: #fff;
 }
 
 .site-title {
@@ -1618,6 +1616,10 @@ tbody tr:nth-child(odd) th {
   padding-right: 1em;
 }
 
+.site-main .entry-title {
+  margin-top: 0;
+}
+
 .entry-meta {
   text-transform: uppercase;
   color: #777;
@@ -1625,6 +1627,13 @@ tbody tr:nth-child(odd) th {
 
 .entry-meta a {
   color: #555;
+}
+
+/*
+ * Home
+ */
+.home .entry-title {
+  display: none;
 }
 
 /*
