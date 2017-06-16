@@ -30,7 +30,7 @@
     <div class="container">
       <div class="row">
         <div class="site-branding">
-          <?php if ( is_front_page() && is_home() ) : ?>
+          <?php if ( is_front_page() ) : ?>
             <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
           <?php else : ?>
             <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
@@ -43,8 +43,13 @@
 		<nav id="site-navigation" class="main-navigation" role="navigation">
       <div class="container">
         <div class="row">
-          <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'whiteboard' ); ?></button>
-          <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'whiteboard' ); ?></button>
+			<?php wp_nav_menu( array(
+				'theme_location' => 'primary',
+				'menu_id' => 'primary-menu',
+				'before' => '<a class="dropdown-icon-link" href="#"><svg class="dropdown-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></a>
+',
+			) ); ?>
         </div> <!-- .row -->
       </div> <!-- .container -->
 		</nav><!-- #site-navigation -->

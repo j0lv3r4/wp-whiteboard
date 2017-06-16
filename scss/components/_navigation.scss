@@ -1,56 +1,35 @@
-/*
+/**
  * Navigation
  */
 
-/* Top navigation */
-.top-navigation {
-  padding: .3em 0;
-  background-color: $wb-gray;
+/*
+ * Basic layout and styling for navigation
+ */
 
-  .menu-item,
-  .page_item {
-    border: 0;
-
-    a {
-      color: $wb-white;
-    }
-  }
-
-  .sub-menu,
-  .children {
-    background-color: $wb-gray-dark;
-  }
-
-  .menu ul {
-    float: left;
-    margin-bottom: 0;
-  }
-}
-
-#menu-top {
-  margin: 0;
-  float: right;
-}
-
-/* Main navigation */
 .main-navigation {
   padding: .618em 0;
-  background-color: $wb-gray-light;
 }
 
 .nav-menu {
   float: left;
+  margin-top: .5em;
+  width: 100%;
+  position: relative;
+  display: block !important; // remove
   margin-bottom: 0;
 }
 
+$wb-mobile-nav-link-bg: $wb-brand-primary;
+
 .menu-item,
 .page_item {
-  margin-left: .5em;
-  padding-left: .5em;
-  border-left: 1px solid $wb-gray;
-
   a {
-    color: $wb-gray-darker;
+    display: inline-block;
+    padding: .5em 1em;
+    width: 100%;
+    margin-bottom: 1px;
+    color: #fff;
+    background-color: $wb-mobile-nav-link-bg;
   }
 
   &:first-child {
@@ -60,41 +39,75 @@
   }
 }
 
-.nav-menu > li:first-child,
+/*
+ * Dropdown structure
+ */
 .menu-item,
 .page_item {
-  float: left;
+  .dropdown-icon-link {
+    display: inline-block;
+    float: right;
+    padding: .45em 0 0;
+    width: 10%;
+    text-align: center;
+    border-left: 1px solid darken($wb-mobile-nav-link-bg, 15%);
+    background-color: darken($wb-mobile-nav-link-bg, 10%);
+  }
+
+  .dropdown-icon {
+    margin-top: 4px;
+    margin-bottom: -2px;
+  }
+
+  &.menu-item-has-children > a:not(.dropdown-icon-link) {
+    width: 90% !important;
+  }
+
+  // If menu item has no children then hide the dropdown icon
+  &:not(.menu-item-has-children) {
+    .dropdown-icon-link {
+      display: none;
+    }
+  }
 }
+
+// TODO:
+// Figure out a better way to do this, somehow inheriting styles
+.sub-menu,
+.children {
+  a:not(.dropdown-icon-link) {
+    padding-left: 3em;
+  }
+
+  .sub-menu,
+  .children {
+    a:not(.dropdown-icon-link) {
+      padding-left: 6em;
+    }
+  }
+}
+
+.show-children > .sub-menu,
+.show-children > .children {
+  display: block !important;
+}
+
+// .nav-menu > li:first-child,
+// .menu-item,
+// .page_item {
+//   float: left;
+// }
 
 /* Dropdown menu */
 .sub-menu,
 .children {
-  position: absolute;
   display: none;
-  background-color: $wb-gray-lighter;
 
   .menu-item,
   .page_item {
     border: 0;
     display: block;
     float: none;
-  }
-
-  .sub-menu,
-  .children {
-    top: 0;
-    left: 100%;
-  }
-}
-
-/* Dropdown menu element */
-.menu-item-has-children,
-.page_item_has_children {
-  position: relative;
-
-  &:hover > .sub-menu,
-  &:hover > .children {
-    display: block;
   }
 }
 

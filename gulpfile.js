@@ -1,29 +1,28 @@
 var elixir = require('laravel-elixir');
-require('laravel-elixir-livereload');
+require('laravel-elixir-browsersync-official');
 
 elixir(function(mix) {
   mix.sass('./scss/style.scss', './style.css');
 
   mix.scripts([
+    './js/scripts.js',
+    './js/customizer.js',
     './js/navigation.js',
     './js/skip-link-focus-fix.js'
   ],
     './scripts.js'
   );
 
-  // mix.version(['./style.css', './scripts.js']);
-
   mix.browserSync({
     notify: false,
     port: 9001,
     proxy: {
       target: 'whiteboard.dev'
-    }
+    },
+    files: [
+      './**/*.php',
+      './*.css',
+      './*.js'
+    ]
   });
-
-  mix.livereload([
-    './**/*.php',
-    './*.css',
-    './*.js'
-  ]);
 });
