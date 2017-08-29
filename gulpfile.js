@@ -6,7 +6,6 @@ elixir(function(mix) {
 
   mix.scripts([
     './js/scripts.js',
-    // './js/customizer.js',
     './js/navigation.js',
     './js/skip-link-focus-fix.js'
   ],
@@ -17,7 +16,7 @@ elixir(function(mix) {
     notify: false,
     port: 9001,
     proxy: {
-      target: 'whiteboard.dev'
+	  target: 'missyherndon.dev'
     },
     files: [
       './**/*.php',
