@@ -3,7 +3,7 @@
  */
 
 /*
- *  Mobile nav toggle menu
+ *  Mobile nav toggle menu 
  */
 
 button.menu-toggle {
@@ -29,7 +29,6 @@ button.menu-toggle {
  */
 
 .nav-menu {
-  margin-top: 2em;
   float: left;
   width: 100%;
   position: relative;
@@ -46,38 +45,25 @@ button.menu-toggle {
     width: 100%;
     margin-bottom: 1px;
     color: $wb-white;
-    background-color: $wb-gold;
+    background-color: $wb-mobile-nav-link-bg;
 
     &:hover {
       @include respond-to(48em) {
-        // background-color: darken($wb-gold, 10%);
-        color: $wb-gold;
+        background-color: darken($wb-mobile-nav-link-bg, 10%);
       }
     }
 
     @include respond-to(48em) {
       float: left;
       width: auto;
-      padding-left: 0;
-      color: #333;
-      font-weight: bold;
-      text-transform: uppercase;
-      background-color: transparent;
+      padding: .3em 1em;
     }
-  }
-
-  .nav-separator {
-    margin-left: 1em;
   }
 
   &:first-child {
     border-left: 0;
     margin-left: 0;
     padding-left: 0;
-  }
-
-  &:last-child .nav-separator {
-    display: none;
   }
 
   @include respond-to(48em) {
@@ -154,7 +140,7 @@ button.menu-toggle {
     float: none;
 
     a {
-      @include respond-to(48em) {
+      @include respond-to(48em) { 
         padding: .5em 1em !important;
         width: 100%;
         font-size: .9em;
