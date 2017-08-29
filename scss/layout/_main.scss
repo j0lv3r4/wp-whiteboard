@@ -3,7 +3,7 @@
  */
 
 .container {
-  max-width: 60em;
+  max-width: 63em;
   margin: 0 auto;
   padding-left: 1em;
   padding-right: 1em;
@@ -25,9 +25,60 @@
 }
 
 /*
+ * Misc
+ */
+.section {
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+
+/*
  * Home
  */
 
 .home .entry-title {
   display: none;
+}
+
+/*
+ * Section events
+ */
+.event-title {
+  margin-top: .5em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+// .events-left {
+//   .event-img {
+//   }
+// }
+
+/*
+ * Section news
+ */
+.section-news {
+  text-align: center;
+}
+
+.news-item-title {
+  text-transform: uppercase;
+}
+
+/*
+ * Section interfaith
+ */
+.section-interfaith {
+  text-align: center;
+
+  p {
+    font-size: 1em;
+    font-weight: bold;
+  }
+}
+
+.interfaith-logo {
+  margin-bottom: -5px;
+  max-width: 6em;
+  display: inline-block;
 }

@@ -106,7 +106,7 @@ html {
 
 body {
   color: #333;
-  font-family: "Roboto", sans-serif;
+  font-family: "ltc-goudy-oldstyle-pro", serif;
   font-size: 16px;
   line-height: 1.618;
   background-color: #fff;
@@ -438,7 +438,8 @@ abbr {
 button,
 .button,
 a.button, a.button-primary,
-.button-primary, .button-small, .button-large {
+.button-primary, a.button-ghost,
+.button-ghost, .button-small, .button-large {
   display: inline-block;
   padding: .75em 1em;
   border: 0;
@@ -452,7 +453,8 @@ a.button, a.button-primary,
 
 button:focus,
 .button:focus,
-.button-primary:focus, .button-small:focus, .button-large:focus {
+.button-primary:focus,
+.button-ghost:focus, .button-small:focus, .button-large:focus {
   outline: none;
 }
 
@@ -491,6 +493,13 @@ a.button-primary:hover,
 a.button-primary:active,
 .button-primary:active {
   background-color: #0058aa;
+}
+
+a.button-ghost,
+.button-ghost {
+  color: #333;
+  background-color: transparent;
+  border: 2px solid #333;
 }
 
 .button-small {
@@ -641,7 +650,7 @@ object {
  * Navigation
  */
 /*
- *  Mobile nav toggle menu 
+ *  Mobile nav toggle menu
  */
 button.menu-toggle {
   width: 100%;
@@ -665,6 +674,7 @@ button.menu-toggle span {
  * Basic layout and styling for navigation (mobile first)
  */
 .nav-menu {
+  margin-top: 2em;
   float: left;
   width: 100%;
   position: relative;
@@ -683,13 +693,13 @@ button.menu-toggle span {
   width: 100%;
   margin-bottom: 1px;
   color: #fff;
-  background-color: #2980b9;
+  background-color: #947940;
 }
 
 @media only screen and (min-width: 48em) {
   .menu-item a:hover,
   .page_item a:hover {
-    background-color: #20638f;
+    color: #947940;
   }
 }
 
@@ -698,8 +708,17 @@ button.menu-toggle span {
   .page_item a {
     float: left;
     width: auto;
-    padding: .3em 1em;
+    padding-left: 0;
+    color: #333;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: transparent;
   }
+}
+
+.menu-item .nav-separator,
+.page_item .nav-separator {
+  margin-left: 1em;
 }
 
 .menu-item:first-child,
@@ -707,6 +726,11 @@ button.menu-toggle span {
   border-left: 0;
   margin-left: 0;
   padding-left: 0;
+}
+
+.menu-item:last-child .nav-separator,
+.page_item:last-child .nav-separator {
+  display: none;
 }
 
 @media only screen and (min-width: 48em) {
@@ -909,6 +933,16 @@ tbody tr:nth-child(odd) th {
 .site-footer {
   padding: 4em 0;
   text-align: center;
+  color: #fff;
+  background-color: #333;
+}
+
+.site-footer a {
+  color: #fff;
+}
+
+.site-footer a:hover {
+  opacity: .8;
 }
 
 [class^="col-"]:first-child {
@@ -1595,7 +1629,7 @@ tbody tr:nth-child(odd) th {
 }
 
 .site-header {
-  padding: 2em 0;
+  padding: 1em 0;
 }
 
 .site-title {
@@ -1610,7 +1644,7 @@ tbody tr:nth-child(odd) th {
  * Main styling
  */
 .container {
-  max-width: 60em;
+  max-width: 63em;
   margin: 0 auto;
   padding-left: 1em;
   padding-right: 1em;
@@ -1630,10 +1664,56 @@ tbody tr:nth-child(odd) th {
 }
 
 /*
+ * Misc
+ */
+.section {
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+
+/*
  * Home
  */
 .home .entry-title {
   display: none;
+}
+
+/*
+ * Section events
+ */
+.event-title {
+  margin-top: .5em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/*
+ * Section news
+ */
+.section-news {
+  text-align: center;
+}
+
+.news-item-title {
+  text-transform: uppercase;
+}
+
+/*
+ * Section interfaith
+ */
+.section-interfaith {
+  text-align: center;
+}
+
+.section-interfaith p {
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.interfaith-logo {
+  margin-bottom: -5px;
+  max-width: 6em;
+  display: inline-block;
 }
 
 /*

@@ -9,30 +9,70 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-    <div class="container">
-      <div class="row">
-        <main id="main" class="site-main" role="main">
+	<div class="site-slider">
+		<img src="<?php echo get_template_directory_uri(); ?>/img/carousel.png">
+	</div> <!-- .site-slider -->
 
-          <?php while ( have_posts() ) : the_post(); ?>
+	<section class="section-events section">
+		<div class="container">
+			<div class="row">
+				<div class="col-7 events-left">
+					<div class="event">
+						<img class="event-img" src="<?php echo get_template_directory_uri(); ?>/img/img-book.png">
+						<h4 class="event-title">Pharetra Risus Amet</h4>
+					</div> <!-- .event -->
+				</div> <!-- .col-7 -->
 
-            <?php get_template_part( 'template-parts/content', 'page' ); ?>
+				<div class="col-5 events-right">
+					<div class="top">
+						<div class="event">
+							<img class="event-img" src="<?php echo get_template_directory_uri(); ?>/img/image.png">
+							<h4 class="event-title">Porta Quam Ipsum</h4>
+						</div> <!-- .event -->
+					</div> <!-- .top -->
 
-            <?php
-              // If comments are open or we have at least one comment, load up the comment template.
-              // if ( comments_open() || get_comments_number() ) :
-              //   comments_template();
-              // endif;
-            ?>
+					<div class="bottom">
+						<div class="event">
+							<img class="event-img" src="<?php echo get_template_directory_uri(); ?>/img/img-group.png">
+							<h4 class="event-title">Ligula Adipiscing Sem</h4>
+						</div> <!-- .event -->
+					</div> <!-- .bottom -->
+				</div> <!-- .col-5 -->
+			</div> <!-- .row -->
+		</div> <!-- .container -->
+	</section>
 
-          <?php endwhile; // End of the loop. ?>
+	<div class="separator">
+		<div class="container">
+			<img src="<?php echo get_template_directory_uri(); ?>/img/divider.png">
+		</div> <!-- .container -->
+	</div> <!-- .separator -->
 
-        </main><!-- #main -->
+	<div class="section-news section">
+		<div class="container">
+			<div class="row">
+				<div class="col-1-3 news-item">
+					<img class="news-item-img" src="<?php echo get_template_directory_uri(); ?>/img/thank-you.png">
+					<h4 class="news-item-title">Egestas Bibendum Fusce</h4>
+					<p class="news-item-excerpt">Donec sed odio dui. Donec id elit non mi porta gravida at eget metus. Aenean eu leo quam. Pellentesque ornare sem.</p>
+					<a class="button-ghost news-item-btn" href="#">Read More</a>
+				</div> <!-- .col-1-3 .news-item -->
 
-        <?php // get_sidebar(); ?>
+				<div class="col-1-3 news-item">
+					<img class="news-item-img" src="<?php echo get_template_directory_uri(); ?>/img/Layer-2.png">
+					<h4 class="news-item-title">Ipsum Bibendum Malesuada</h4>
+					<p class="news-item-excerpt">Donec sed odio dui. Donec id elit non mi porta gravida at eget metus. Aenean eu leo quam. Pellentesque ornare sem.</p>
+					<a class="button-ghost news-item-btn" href="#">Read More</a>
+				</div> <!-- .col-1-3 .news-item -->
 
-      </div> <!-- .row -->
-    </div> <!-- .container -->
-	</div><!-- #primary -->
+				<div class="col-1-3 news-item">
+					<img class="news-item-img" src="<?php echo get_template_directory_uri(); ?>/img/Layer-3.png">
+					<h4 class="news-item-title">Sollicitudin Cras Sem</h4>
+					<p class="news-item-excerpt">Donec sed odio dui. Donec id elit non mi porta gravida at eget metus. Aenean eu leo quam. Pellentesque ornare sem.</p>
+					<a class="button-ghost news-item-btn" href="#">Read More</a>
+				</div> <!-- .col-1-3 .news-item -->
+			</div> <!-- .row -->
+		</div> <!-- .container -->
+	</div> <!-- .section-news -->
 
 <?php get_footer(); ?>

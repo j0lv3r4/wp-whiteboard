@@ -17,7 +17,7 @@ elixir(function(mix) {
     notify: false,
     port: 9001,
     proxy: {
-      target: 'whiteboard.dev'
+      target: 'thebooks.dev'
     },
     files: [
       './**/*.php',

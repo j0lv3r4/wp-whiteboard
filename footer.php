@@ -13,16 +13,26 @@
 
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
-    <div class="container">
-      <div class="row">
-        <div class="site-info">
-          <a href="<?php echo esc_url( __( 'https://wordpress.org/', 'whiteboard' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'whiteboard' ), 'WordPress' ); ?></a>
-          <span class="sep"> | </span>
-          <?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'whiteboard' ), 'Whiteboard', '<a href="https://adwhite.com" rel="designer">adWhite</a>' ); ?>
-        </div><!-- .site-info -->
-      </div> <!-- .row -->
-    </div> <!-- .container -->
+	<div class="section-interfaith section">
+		<div class="container">
+			<div class="row">
+				<p>An <img class="interfaith-logo" src="<?php echo get_template_directory_uri(); ?>/img/logo-interfaith.png"> Publication</p>
+			</div> <!-- .row -->
+		</div> <!-- .container -->
+	</div> <!-- .section -->
+
+	<footer id="colophon" class="site-footer section" role="contentinfo">
+		<div class="container">
+			<div class="row">
+				<div class="site-info">
+					<p>4242 Interfaith Way, The Woodlands, Texas 77381 &bullet; 281-367-1230 &bullet; Privacy Policy &bullet; Sitemap</p>
+
+					<p>Interfaith of The Woodlands is a 501(c)(3) non-profit organization. All donations are tax-deductible.</p>
+
+					<p>Website design by <a target="_blank" href="https://adwhite.com">adWhite</a></p>
+				</div><!-- .site-info -->
+			</div> <!-- .row -->
+		</div> <!-- .container -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

@@ -46,6 +46,15 @@ a.button-primary,
   @include button($wb-btn-primary-bg, $wb-btn-primary-color);
 }
 
+a.button-ghost,
+.button-ghost {
+  @extend %button-static;
+
+  color: #333;
+  background-color: transparent;
+  border: 2px solid #333;
+}
+
 .button-small {
   @extend %button-static;
 

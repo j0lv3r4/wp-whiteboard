@@ -18,6 +18,9 @@
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
 <?php wp_head(); ?>
+
+<script src="https://use.typekit.net/gyu1wdi.js"></script>
+<script>try{Typekit.load({ async: true });}catch(e){}</script>
 </head>
 
 <body <?php body_class(); ?>>
@@ -27,38 +30,42 @@
   </div> <!-- .container -->
 
 	<header id="masthead" class="site-header" role="banner">
-    <div class="container">
-      <div class="row">
-        <div class="site-branding">
-          <?php if ( is_front_page() ) : ?>
-            <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-          <?php else : ?>
-            <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-          <?php endif; ?>
-          <p class="site-description"><?php bloginfo( 'description' ); ?></p>
-        </div> <!-- .row -->
-      </div> <!-- .container -->
-		</div><!-- .site-branding -->
+		<div class="container">
+			<div class="row">
+				<div class="site-branding">
+					<a class="site-logo-link" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+						<img class="site-logo" src="<?php echo get_template_directory_uri(); ?>/img/logo.png">
+					</a>
+					<?php if ( is_front_page() ) : ?>
+						<h1 class="site-title visuallyhidden"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+					<?php else : ?>
+						<p class="site-title visuallyhidden"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+					<?php endif; ?>
+						<p class="site-description visuallyhidden"><?php bloginfo( 'description' ); ?></p>
+				</div> <!-- .site-branding -->
+			</div> <!-- .row -->
+		</div><!-- .container -->
 
 		<nav id="site-navigation" class="main-navigation" role="navigation">
-      <div class="container">
-        <div class="row">
-			<button class="menu-toggle" aria-controls="primary-menu" a754962ria-expanded="false">
-				<svg class="menu-toggle-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-					<line x1="3" y1="12" x2="21" y2="12"/>
-					<line x1="3" y1="6" x2="21" y2="6"/>
-					<line x1="3" y1="18" x2="21" y2="18"/>
-				</svg>
-				<span><?php esc_html_e( 'Menu', 'whiteboard' ); ?></span>
-			</button>
-			<?php wp_nav_menu( array(
-				'theme_location' => 'primary',
-				'menu_id' => 'primary-menu',
-				'before' => '<a class="dropdown-icon-link" href="#"><svg class="dropdown-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></a>
-',
-			) ); ?>
-        </div> <!-- .row -->
-      </div> <!-- .container -->
+			<div class="container">
+				<div class="row">
+					<button class="menu-toggle" aria-controls="primary-menu" a754962ria-expanded="false">
+						<svg class="menu-toggle-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+							<line x1="3" y1="12" x2="21" y2="12"/>
+							<line x1="3" y1="6" x2="21" y2="6"/>
+							<line x1="3" y1="18" x2="21" y2="18"/>
+						</svg>
+						<span><?php esc_html_e( 'Menu', 'whiteboard' ); ?></span>
+					</button>
+					<?php wp_nav_menu( array(
+						'theme_location' => 'primary',
+						'menu_id' => 'primary-menu',
+						'link_after' => '<span class="nav-separator">/</span>',
+						'before' => '<a class="dropdown-icon-link" href="#"><svg class="dropdown-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></a>
+		',
+					) ); ?>
+				</div> <!-- .row -->
+			</div> <!-- .container -->
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 
