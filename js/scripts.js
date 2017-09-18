@@ -1,9 +1,10 @@
-;(function($) {
-    var $dropdownIcon = $('.dropdown-icon-link');
+import $ from 'jquery';
+import Popper from 'popper.js';
 
-    $dropdownIcon.on('click', function(e) {
-        e.preventDefault();
-        var $this = $(this);
-        $this.parent().toggleClass('show-children');
-    });
+window.Popper = Popper;
+window.jQuery = $;
+require('bootstrap');
+
+;(function($) {
+	console.log($);
 })(jQuery);
