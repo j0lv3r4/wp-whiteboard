@@ -21,45 +21,43 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div id="page" class="hfeed site">
-  <div class="container">
-    <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'whiteboard' ); ?></a>
-  </div> <!-- .container -->
+	<div id="page" class="hfeed site">
+		<div class="container">
+			<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'whiteboard' ); ?></a>
+		</div> <!-- .container -->
 
-	<header id="masthead" class="site-header" role="banner">
-    <div class="container">
-      <div class="row">
-        <div class="site-branding">
-          <?php if ( is_front_page() ) : ?>
-            <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-          <?php else : ?>
-            <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-          <?php endif; ?>
-          <p class="site-description"><?php bloginfo( 'description' ); ?></p>
-        </div> <!-- .row -->
-      </div> <!-- .container -->
-		</div><!-- .site-branding -->
+		<header id="masthead" class="site-header" role="banner">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 site-branding">
+					<?php if ( is_front_page() ) : ?>
+						<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+					<?php else : ?>
+						<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+					<?php endif; ?>
+					<p class="site-description"><?php bloginfo( 'description' ); ?></p>
+					</div> <!-- .site-branding -->
 
-		<nav id="site-navigation" class="main-navigation" role="navigation">
-      <div class="container">
-        <div class="row">
-			<button class="menu-toggle" aria-controls="primary-menu" a754962ria-expanded="false">
-				<svg class="menu-toggle-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-					<line x1="3" y1="12" x2="21" y2="12"/>
-					<line x1="3" y1="6" x2="21" y2="6"/>
-					<line x1="3" y1="18" x2="21" y2="18"/>
-				</svg>
-				<span><?php esc_html_e( 'Menu', 'whiteboard' ); ?></span>
-			</button>
-			<?php wp_nav_menu( array(
-				'theme_location' => 'primary',
-				'menu_id' => 'primary-menu',
-				'before' => '<a class="dropdown-icon-link" href="#"><svg class="dropdown-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></a>
-',
-			) ); ?>
-        </div> <!-- .row -->
-      </div> <!-- .container -->
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
+					<nav id="site-navigation" class="col-12 main-navigation site-nav navbar navbar-expand-md navbar-light bg-light" role="navigation">
+						<span class="navbar=text">&nbsp;</span>
+						<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+							<span class="navbar-toggler-icon"></span>
+						</button>
 
-	<div id="content" class="site-content">
+						<?php wp_nav_menu( array(
+							'theme_location' => 'primary',
+							'depth' => 3,
+							'container' => 'div',
+							'container_id' => 'navbarSupportedContent',
+							'container_class' => 'collapse navbar-collapse',
+							'menu_id' => 'primary-menu',
+							'menu_class' => 'nav navbar-nav',
+							'fallback_cb' => 'WP_Bootstrap_Navwalker::fallback',
+							'walker' => new WP_Bootstrap_Navwalker()
+						) ); ?>
+					</nav><!-- #site-navigation -->
+				</div> <!-- .row -->
+			</div><!-- .container -->
+		</header><!-- #masthead -->
+
+		<div id="content" class="site-content">

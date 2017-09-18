@@ -1,0 +1,29 @@
+/*
+ * Layout
+ */
+
+#secondary {
+    word-break: break-word
+}
+
+// Form
+.search-form {
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+
+
+/*
+ * Theming
+ */
+
+// Form
+.search-form {
+    .search-field {
+        @extend .form-control;
+    }
+
+    .search-submit {
+        @extend .btn;
+    }
+}

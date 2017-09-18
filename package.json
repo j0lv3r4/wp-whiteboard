@@ -1,35 +1,35 @@
 {
   "name": "whiteboard",
   "version": "1.0.0",
-  "description": "WordPress theme starter",
-  "main": "index.js",
+  "description": "Whiteboard for WordPress ===",
+  "main": "scripts.js",
   "dependencies": {
-    "gulp": "^3.9.1",
-    "laravel-elixir": "^6.0.0-15"
+	"bootstrap": "4.0.0-alpha",
+	"jquery": "^3.2.1",
+	"popper.js": "^1.12.5",
+    "browser-sync": "^2.18.13",
+    "browser-sync-webpack-plugin": "^1.2.0"
   },
   "devDependencies": {
-    "gulp": "^3.9.1",
-    "laravel-elixir": "^6.0.0-15",
-    "laravel-elixir-browsersync-official": "^1.0.0"
+    "cross-env": "^5.0.5",
+    "laravel-mix": "^1.4.3",
+    "node-sass": "^4.5.3"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node node_modules/cross-env/dist/bin/cross-env.js NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "node node_modules/cross-env/dist/bin/cross-env.js NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "hot": "node node_modules/cross-env/dist/bin/cross-env.js NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "production": "node node_modules/cross-env/dist/bin/cross-env.js NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/thinkxl/whiteboard.git"
+    "url": "git+https://github.com/thinkxl/wp-whiteboard.git"
   },
-  "keywords": [
-    "WordPress",
-    "gulp",
-    "elixir",
-    "CSS",
-    "JavaScript"
-  ],
-  "author": "Juan Olvera",
-  "license": "MIT",
+  "author": "",
+  "license": "ISC",
   "bugs": {
-    "url": "https://github.com/thinkxl/whiteboard/issues"
+    "url": "https://github.com/thinkxl/wp-whiteboard/issues"
   },
-  "homepage": "https://github.com/thinkxl/whiteboard#readme"
+  "homepage": "https://github.com/thinkxl/wp-whiteboard#readme"
 }
