@@ -9,66 +9,56 @@ License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: whiteboard
 Tags:
-
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
 
-//
-// Contents
-//
-// Vendors
-// Utils
-// Base
-// Components
-// Layouts
-// Pages
-//
+@import "bootstrap/functions";
+@import "bootstrap/variables";
+@import "custom";
+@import "bootstrap/mixins";
+@import "bootstrap/print";
+@import "bootstrap/reboot";
+@import "bootstrap/type";
+@import "bootstrap/images";
+@import "bootstrap/code";
+@import "bootstrap/grid";
+@import "bootstrap/tables";
+@import "bootstrap/forms";
+@import "bootstrap/buttons";
+@import "bootstrap/transitions";
+@import "bootstrap/dropdown";
+@import "bootstrap/button-group";
+@import "bootstrap/input-group";
+@import "bootstrap/custom-forms";
+@import "bootstrap/nav";
+@import "bootstrap/navbar";
+@import "bootstrap/card";
+@import "bootstrap/breadcrumb";
+@import "bootstrap/pagination";
+@import "bootstrap/badge";
+@import "bootstrap/jumbotron";
+@import "bootstrap/alert";
+@import "bootstrap/progress";
+@import "bootstrap/media";
+@import "bootstrap/list-group";
+@import "bootstrap/close";
+@import "bootstrap/modal";
+@import "bootstrap/tooltip";
+@import "bootstrap/popover";
+@import "bootstrap/carousel";
+@import "bootstrap/utilities";
 
+// WordPress Core
+@import "wordpress";
 
-// Vendors
-
-// bower:css
-@import "vendors/normalize-css/normalize.css";
-// endbower
-
-// bower:scss
-@import "vendors/tequila.scss/tequila.scss";
-// endbower
-
-// Utils
-
-@import 'utils/variables';
-@import 'utils/mixins';
-@import 'utils/helpers';
-
-// Base
-
-@import 'base/base';
-@import 'base/forms';
-@import 'base/typography';
-
-// Components
-
-@import 'components/buttons';
-@import 'components/comments';
-@import 'components/media';
-@import 'components/navigation';
-@import 'components/tables';
-
-// Layout
-
-@import 'layout/footer';
-@import 'layout/grid';
-@import 'layout/header';
-@import 'layout/main';
-@import 'layout/sidebar';
-
-// Pages
-
-@import 'pages/home';
-@import 'pages/blog';
-
-// Everything that can be categorized later
-
-@import 'todo';
+// Theming
+@import "theme/layout";
+@import "theme/header";
+@import "theme/footer";
+@import "theme/nav";
+@import "theme/front-page";
+@import "theme/page";
+@import "theme/comments";
+@import "theme/sidebar";
+@import "theme/blog";

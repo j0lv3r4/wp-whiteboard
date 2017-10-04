@@ -1,0 +1,31 @@
+/*
+ * Layout
+ */
+
+// Comments
+#comments {
+    max-width: 100%;
+
+    @include media-breakpoint-up(lg) {
+        max-width: 80%;
+    }
+}
+
+
+/*
+ * Theming
+ */
+
+// Comments
+#comments {
+    #author,
+    #email,
+    #url,
+    #comment {
+        @extend .form-control;
+    }
+
+    #submit {
+        @extend .btn;
+    }
+}

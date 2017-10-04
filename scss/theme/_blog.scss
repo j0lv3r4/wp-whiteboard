@@ -1,0 +1,38 @@
+/*
+ * Layout
+ */
+
+// Blog index
+.blog,
+.archive {
+    word-break: break-word;
+
+    .posted-on {
+        color: $gray-600;
+    }
+}
+
+article.post {
+    margin-bottom: 3em;
+
+    .entry-footer span {
+        margin-right: .5em;
+    }
+}
+
+// Blog post
+.entry-meta {
+    margin-top: -1em;
+    margin-bottom: 2em;
+}
+
+
+/*
+ * Theming
+ */
+
+// Sticky post (maybe move it to _wordpress.scss?)
+.sticky {
+    padding: 1em;
+    background-color: $gray-200;
+}
