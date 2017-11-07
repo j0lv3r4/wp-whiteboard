@@ -115,6 +115,8 @@ add_action( 'widgets_init', 'whiteboard_widgets_init' );
  */
 function whiteboard_scripts() {
 	wp_enqueue_style( 'whiteboard-style', get_stylesheet_uri() );
+	
+	wp_enqueue_style( 'font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' );
 
 	wp_enqueue_script( 'whiteboard-scripts', get_template_directory_uri() . '/scripts.js', array(), '20170206', true );
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -151,3 +153,12 @@ require get_template_directory() . '/inc/jetpack.php';
 // Register Custom Navigation Walker
 // https://github.com/wp-bootstrap/wp-bootstrap-navwalker/tree/v4
 require_once('class-wp-bootstrap-navwalker.php');
+
+/**
+ * Remove `width` and `height` attrs from `get_the_post_thumbnail()`
+ */
+function whiteboard_remove_thumbnail_width_height( $html, $post_id, $post_thumbnail_id, $size, $attr ) {
+	$html = preg_replace( '/(width|height)=\"\d*\"\s/', "", $html);
+	return $html;
+}
+add_filter( 'post_thumbnail_html', 'whiteboard_remove_thumbnail_width_height', 10, 5 );

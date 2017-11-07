@@ -1,0 +1,17 @@
+.single,
+.page {
+    .entry-header {
+        margin-bottom: 2.5em;
+        padding-top: .5em;
+        padding-bottom: .5em;
+        border-top: 2px solid $p-gold;
+        border-bottom: 2px solid $p-gold; 
+    } 
+    
+    .entry-title {
+        margin-bottom: 0;
+        color: $p-gold;
+        font-size: 2rem;
+        text-transform: uppercase;
+    }
+}

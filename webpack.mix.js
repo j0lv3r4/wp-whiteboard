@@ -2,13 +2,15 @@ var mix = require('laravel-mix');
 
 mix.sass(
     './scss/style.scss',
-    './style.css',
-).js([
+    './style.css'
+);
+
+mix.js([
     	'./js/scripts.js',
 		'./js/navigation.js',
-		'./js/skip-link-focus-fix.js',
+		'./js/skip-link-focus-fix.js'
 	],
-    './scripts.js',
+    './scripts.js'
 ).sourceMaps();
 
 mix.browserSync({
@@ -20,7 +22,7 @@ mix.browserSync({
     files: [
       './style.css',
       './*.js',
-      './**/*.php',
+      './**/*.php'
     ],
-    logLevel: 'debug',
+    logLevel: 'debug'
 });

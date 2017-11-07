@@ -17,14 +17,18 @@
 			<div class="container">
 				<div class="row">
 					<div class="site-info">
-						<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'whiteboard' ) ); ?>"><?php
-							printf( esc_html__( 'Proudly powered by %s', 'whiteboard' ), 'WordPress' );
+						<p><?php
+							printf( esc_html__( '4242 Interfaith Way, The Woodlands, Texas 77381 • 281-367-1230 • %1$s • %2$s', 'whiteboard'  ), '<a href="/privacy-policy">Privacy Policy</a>', '<a href="/sitemap">Sitemap</a>' );
+						?></p>
+						
+						<p><?php
+							printf( esc_html__( 'Interfaith of the Woodlands is a 501(c)(3) non-profit organization. All donations are tax-deductible.', 'whiteboard' ) );	
+						?></p>
+						
+						<a href="<?php echo esc_url( __( 'https://adWhite.com/', 'whiteboard' ) ); ?>" target="_blank"><?php
+							printf( esc_html__( 'Website design by %s', 'whiteboard' ), 'adWhite' );
 						?></a>
-						<span class="sep"> | </span>
-						<?php
-							printf( esc_html__( 'Theme: %1$s by %2$s.', 'whiteboard' ), 'Whiteboard', '<a href="https://adwhite.com" rel="designer">adWhite</a>' );
-						?>
-					</div><!-- .site-info -->
+					</div>
 				</div> <!-- .row -->
 			</div> <!-- .container -->
 		</footer><!-- #colophon -->

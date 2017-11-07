@@ -1,0 +1,48 @@
+#site-navigation {
+    @extend .bg-gold;
+    @extend .navbar-dark;
+    margin-top: 1.5em;
+    margin-bottom: 0em;
+    
+    /*
+     * Had to use a lot of importants here, it sucks, but that's the way
+     * to make it work with BS
+     */
+    @include media-breakpoint-up(md) {
+        text-transform: uppercase;
+        background-color: transparent !important;
+        
+        .active > .nav-link {
+           color: $navbar-light-active-color !important;     
+           
+           &:hover {
+               color: $navbar-light-active-color !important;
+           }
+        }
+        
+        .nav-link {
+            color: $navbar-light-color !important;
+            
+            &:hover {
+               color: $p-gold !important;     
+            }
+        }
+    }
+}
+
+.nav-item {
+    &:last-child {
+        .nav-separator {
+            display: none !important;
+        }
+    }
+}
+
+.nav-separator {
+    display: none;
+    
+    @include media-breakpoint-up(md) {
+        display: inline-block;
+        margin-left: 1em;
+    }
+}

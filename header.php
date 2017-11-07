@@ -18,6 +18,9 @@
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
 <?php wp_head(); ?>
+
+<script src="https://use.typekit.net/gyu1wdi.js"></script>
+<script>try{Typekit.load({ async: true });}catch(e){}</script>
 </head>
 
 <body <?php body_class(); ?>>
@@ -25,20 +28,52 @@
 		<div class="container">
 			<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'whiteboard' ); ?></a>
 		</div> <!-- .container -->
+		
+		<div class="top-bar">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6">
+						<a class="top-bar-logo-link" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+							<img class="top-bar-logo" src="<?php echo get_template_directory_uri(); ?>/img/logo-thing-white.png">
+						</a>
+					</div> <!-- .col-md-6 -->
+					
+					<div class="col-md-6 top-bar-icons">
+						<a href="https://www.facebook.com/thebookthewoodlands/" target="_blank" class="top-bar-social-icon" aria-label="Facebook">
+							<i class="fa fa-facebook-square" aria-hidden="true"></i>
+						</a>	
+						
+						<a href="https://www.instagram.com/interfaithofthewoodlands/" target="_blank" class="top-bar-social-icon" aria-label="Instagram">
+							<i class="fa fa-instagram" aria-hidden="true"></i>
+						</a>
+						
+						<a href="ljohnson@woodlandsinterfaith.org" class="top-bar-social-icon" aria-label="Email">
+							<i class="fa fa-envelope" aria-hidden="true"></i>
+						</a>
+					</div> <!-- .col-md-6 -->
+				</div>
+			</div>
+		</div>
 
 		<header id="masthead" class="site-header" role="banner">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12 site-branding">
+					<?php if ( get_header_image() ) : ?>
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+							<img src="<?php header_image(); ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="">
+						</a>
+					<?php endif; // End header image check. ?>
+					
 					<?php if ( is_front_page() ) : ?>
-						<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+						<h1 class="site-title sr-only"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 					<?php else : ?>
-						<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+						<p class="site-title sr-only"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 					<?php endif; ?>
-					<p class="site-description"><?php bloginfo( 'description' ); ?></p>
+					<p class="site-description sr-only"><?php bloginfo( 'description' ); ?></p>
 					</div> <!-- .site-branding -->
 
-					<nav id="site-navigation" class="col-12 main-navigation site-nav navbar navbar-expand-md navbar-light bg-light" role="navigation">
+					<nav id="site-navigation" class="col-12 main-navigation site-nav navbar navbar-expand-md" role="navigation">
 						<span class="navbar=text">&nbsp;</span>
 						<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 							<span class="navbar-toggler-icon"></span>
@@ -52,6 +87,7 @@
 							'container_class' => 'collapse navbar-collapse',
 							'menu_id' => 'primary-menu',
 							'menu_class' => 'nav navbar-nav',
+							'link_after' => '<span class="nav-separator">/</span>',
 							'fallback_cb' => 'WP_Bootstrap_Navwalker::fallback',
 							'walker' => new WP_Bootstrap_Navwalker()
 						) ); ?>

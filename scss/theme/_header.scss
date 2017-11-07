@@ -1,0 +1,36 @@
+.top-bar {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+    color: $white;
+    background-color: $p-gold;
+}
+
+.top-bar-logo {
+    max-width: 4em;
+    margin-left: auto;
+    margin-right: auto;
+    
+    @include media-breakpoint-up(md) {
+        margin-left: 0;
+    }
+}
+
+.top-bar-icons {
+    margin-top: .8em;
+    text-align: center;
+    
+    @include media-breakpoint-up(md) {
+        text-align: right;
+    }
+}
+
+.top-bar-social-icon {
+    margin-left: .2em;
+    color: $white;
+    font-size: 1.5em;
+    
+    &:hover {
+        text-decoration: none;
+    }
+}
