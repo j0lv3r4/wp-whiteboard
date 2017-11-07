@@ -32,13 +32,23 @@
 		<div class="top-bar">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-6">
+					<div class="col-12 col-sm-12 col-md-6 col-lg-7 col-xl-8">
 						<a class="top-bar-logo-link" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 							<img class="top-bar-logo" src="<?php echo get_template_directory_uri(); ?>/img/logo-thing-white.png">
 						</a>
 					</div> <!-- .col-md-6 -->
 					
-					<div class="col-md-6 top-bar-icons">
+					<div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 top-bar-nav">
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">Home</a>
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><span class="space-ace">About</span></a>
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><span class="space-ace">Contact</span></a>
+					</div> <!-- /.cols -->
+					
+					
+					
+		
+					
+					<div class="col-12 col-sm-12 col-md-3 col-lg-2 col-xl-1 top-bar-icons">
 						<a href="https://www.facebook.com/thebookthewoodlands/" target="_blank" class="top-bar-social-icon" aria-label="Facebook">
 							<i class="fa fa-facebook-square" aria-hidden="true"></i>
 						</a>	
@@ -47,7 +57,7 @@
 							<i class="fa fa-instagram" aria-hidden="true"></i>
 						</a>
 						
-						<a href="ljohnson@woodlandsinterfaith.org" class="top-bar-social-icon" aria-label="Email">
+						<a href="mailto:ljohnson@woodlandsinterfaith.org" class="top-bar-social-icon" aria-label="Email">
 							<i class="fa fa-envelope" aria-hidden="true"></i>
 						</a>
 					</div> <!-- .col-md-6 -->
