@@ -1,8 +1,6 @@
-import $ from 'jquery';
-import Popper from 'popper.js';
+global.$ = global.jQuery = require('jquery');
+global.Popper = require('popper.js');
 
-window.Popper = Popper;
-window.jQuery = $;
 require('bootstrap');
 
 ;(function($) {

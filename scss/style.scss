@@ -13,52 +13,24 @@ This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
 
-@import "bootstrap/functions";
-@import "bootstrap/variables";
-@import "custom";
-@import "bootstrap/mixins";
-@import "bootstrap/print";
-@import "bootstrap/reboot";
-@import "bootstrap/type";
-@import "bootstrap/images";
-@import "bootstrap/code";
-@import "bootstrap/grid";
-@import "bootstrap/tables";
-@import "bootstrap/forms";
-@import "bootstrap/buttons";
-@import "bootstrap/transitions";
-@import "bootstrap/dropdown";
-@import "bootstrap/button-group";
-@import "bootstrap/input-group";
-@import "bootstrap/custom-forms";
-@import "bootstrap/nav";
-@import "bootstrap/navbar";
-@import "bootstrap/card";
-@import "bootstrap/breadcrumb";
-@import "bootstrap/pagination";
-@import "bootstrap/badge";
-@import "bootstrap/jumbotron";
-@import "bootstrap/alert";
-@import "bootstrap/progress";
-@import "bootstrap/media";
-@import "bootstrap/list-group";
-@import "bootstrap/close";
-@import "bootstrap/modal";
-@import "bootstrap/tooltip";
-@import "bootstrap/popover";
-@import "bootstrap/carousel";
-@import "bootstrap/utilities";
+// Bootrap custom
+@import "bootstrap-custom";
 
-// WordPress Core
-@import "wordpress";
+// WordPress defaults
+@import "wordpress-defaults";
+
+// Style guide
+@import "style-guide";
 
 // Theming
-@import "theme/layout";
-@import "theme/header";
-@import "theme/footer";
-@import "theme/nav";
-@import "theme/front-page";
-@import "theme/page";
-@import "theme/comments";
-@import "theme/sidebar";
-@import "theme/blog";
+@import "theme/utils";
+
+@import "theme/components/comments";
+@import "theme/components/nav";
+@import "theme/components/sidebar";
+@import "theme/components/widgets";
+
+@import "theme/layout/header";
+@import "theme/layout/footer";
+@import "theme/layout/content";
+@import "theme/layout/posts";

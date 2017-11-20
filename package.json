@@ -4,11 +4,11 @@
   "description": "Whiteboard for WordPress ===",
   "main": "scripts.js",
   "dependencies": {
-	"bootstrap": "4.0.0-alpha",
-	"jquery": "^3.2.1",
-	"popper.js": "^1.12.5",
+    "bootstrap": "4.0.0-beta.2",
     "browser-sync": "^2.18.13",
-    "browser-sync-webpack-plugin": "^1.2.0"
+    "browser-sync-webpack-plugin": "^1.2.0",
+    "jquery": "^3.2.1",
+    "popper.js": "^1.12.5"
   },
   "devDependencies": {
     "cross-env": "^5.0.5",

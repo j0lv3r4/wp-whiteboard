@@ -1,0 +1,11 @@
+/*
+ * Page content
+ */
+
+.entry-title {
+    margin-bottom: .8em;
+}
+
+.site-content {
+  @extend %section-space;
+}

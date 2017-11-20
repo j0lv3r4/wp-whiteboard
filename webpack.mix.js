@@ -12,11 +12,9 @@ mix.sass(
 ).sourceMaps();
 
 mix.browserSync({
-    /*
     proxy: {
         target: 'whiteboard.dev',
     },
-    */
     files: [
       './style.css',
       './*.js',

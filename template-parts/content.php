@@ -20,6 +20,14 @@
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
+	<?php if ( has_post_thumbnail() ) : ?>
+	<div class="entry-featured-image">
+		<a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php echo esc_attr( the_title_attribute() ); ?>">
+			<?php echo esc_html( the_post_thumbnail() ); ?>
+		</a>
+	</div> <!-- .entry-featured-image -->
+	<?php endif; ?>
+
 	<div class="entry-content">
 		<?php
 			the_content( sprintf(

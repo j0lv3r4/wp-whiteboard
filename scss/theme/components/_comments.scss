@@ -1,0 +1,23 @@
+/*
+ * Comments
+ */
+
+#comments {
+    margin-top: 2em;
+    max-width: 100%;
+
+    #author,
+    #email,
+    #url,
+    #comment {
+        @extend .form-control;
+    }
+
+    #submit {
+        @extend .btn;
+    }
+
+    @include media-breakpoint-up(lg) {
+        max-width: 80%;
+    }
+}
