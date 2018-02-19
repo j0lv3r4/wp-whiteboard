@@ -4,7 +4,7 @@
   "description": "Whiteboard for WordPress ===",
   "main": "scripts.js",
   "dependencies": {
-    "bootstrap": "4.0.0-beta.2",
+    "bootstrap": "^4.0.0",
     "browser-sync": "^2.18.13",
     "browser-sync-webpack-plugin": "^1.2.0",
     "jquery": "^3.2.1",
