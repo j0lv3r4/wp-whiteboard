@@ -30,6 +30,8 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12 site-branding">
+					<?php if ( function_exists( 'the_custom_logo' ) ) { the_custom_logo(); } ?>
+						
 					<?php if ( is_front_page() ) : ?>
 						<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 					<?php else : ?>
