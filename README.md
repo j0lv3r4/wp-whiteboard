@@ -17,10 +17,10 @@ $ git clone https://github.com/thinkxl/whiteboard.git
 Install dependencies.
 
 ```bash
-$ npm install && bower install
+$ npm install
 ```
 Run server.
 
 ```bash
-$ gulp serve
+$ npm run watch
 ```
