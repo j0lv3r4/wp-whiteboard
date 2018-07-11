@@ -11,5 +11,11 @@
 @import "components/comments";
 @import "components/sidebar";
 
+// Layout
+@import "layout/header";
+@import "layout/main";
+@import "layout/footer";
+@import "layout/sidebar";
+
 // Pages
 @import "pages/blog";

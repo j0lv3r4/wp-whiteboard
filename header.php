@@ -25,34 +25,48 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'low-dash' ); ?></a>
 
 	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$low_dash_description = get_bloginfo( 'description', 'display' );
-			if ( $low_dash_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $low_dash_description; /* WPCS: xss ok. */ ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
+		<div class="container">
+			<div class="row">
+				<div class="site-branding">
+					<?php
+					the_custom_logo();
+					if ( is_front_page() && is_home() ) :
+						?>
+						<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+						<?php
+					else :
+						?>
+						<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+						<?php
+					endif;
+					$low_dash_description = get_bloginfo( 'description', 'display' );
+					if ( $low_dash_description || is_customize_preview() ) :
+						?>
+						<p class="site-description"><?php echo $low_dash_description; /* WPCS: xss ok. */ ?></p>
+					<?php endif; ?>
+				</div><!-- .site-branding -->
 
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'low-dash' ); ?></button>
-			<?php
-			wp_nav_menu( array(
-				'theme_location' => 'menu-1',
-				'menu_id'        => 'primary-menu',
-			) );
-			?>
-		</nav><!-- #site-navigation -->
+				<nav id="site-navigation" class="col-12 main-navigation site-nav navbar navbar-expand-md navbar-light bg-light" role="navigation">
+					<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon" aria-hidden="true"></span>
+					</button>
+
+					<?php
+					wp_nav_menu( array(
+						'theme_location' => 'menu-1',
+						'depth' => 3,
+						'container' => 'div',
+						'container_id' => 'navbarSupportedContent',
+						'container_class' => 'collapse navbar-collapse',
+						'menu_id' => 'primary-menu',
+						'menu_class' => 'navbar-nav mr-auto',
+						'fallback_cb' => 'WP_Bootstrap_Navwalker::fallback',
+						'walker' => new WP_Bootstrap_Navwalker()
+					) );
+					?>
+				</nav><!-- #site-navigation -->
+			</div> <!-- .row -->
+		</div> <!-- .container -->
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">

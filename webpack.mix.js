@@ -1,25 +1,27 @@
 const mix = require("laravel-mix");
-const Rsync = require("rsync");
+// const Rsync = require("rsync");
 
-const themeName = "whiteboardv3";
+// const themeName = "wp-whiteboard";
 const devUrl = "whiteboardv3.local";
-const distFolder = `../${themeName}`;
+// const distFolder = `../${themeName}`;
 
-const rsync = new Rsync()
-	.flags("hvrPtzu")
-	.set("exclude-from", "./.rsync-ignore")
-	.source(".")
-	.destination(distFolder);
+// const rsync = new Rsync()
+// 	.flags("hvrPtzu")
+// 	.set("exclude-from", "./.rsync-ignore")
+// 	.source(".")
+// 	.destination(distFolder);
 
-mix.sass("./sass/style.scss", "./style.css");
-mix.sass("./sass/woocommerce/woocommerce.scss", "./woocommerce.css");
+mix.sass("./src/scss/style.scss", "./style.css")
+.sass("./src/scss/woocommerce/_woocommerce.scss", "./woocommerce.css").sourceMaps();
 
-rsync.execute();
+mix.js("./src/js/scripts.js", "./js/scripts.js").sourceMaps();
+
+// rsync.execute();
 
 mix.browserSync({
 	proxy: {
 		target: devUrl
 	},
-	files: ["./style.css", "./*.js", "./**/*.php"],
+	files: ["./style.css", "./js/*.js", "./**/*.php"],
 	logLevel: "debug"
 });
