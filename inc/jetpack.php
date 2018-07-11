@@ -1,37 +1,59 @@
 <?php
 /**
- * Jetpack Compatibility File.
+ * Jetpack Compatibility File
  *
- * @link https://jetpack.me/
+ * @link https://jetpack.com/
  *
- * @package whiteboard
+ * @package Low_Dash
  */
 
 /**
  * Jetpack setup function.
  *
- * See: https://jetpack.me/support/infinite-scroll/
- * See: https://jetpack.me/support/responsive-videos/
+ * See: https://jetpack.com/support/infinite-scroll/
+ * See: https://jetpack.com/support/responsive-videos/
+ * See: https://jetpack.com/support/content-options/
  */
-function whiteboard_jetpack_setup() {
+function low_dash_jetpack_setup() {
 	// Add theme support for Infinite Scroll.
 	add_theme_support( 'infinite-scroll', array(
 		'container' => 'main',
-		'render'    => 'whiteboard_infinite_scroll_render',
+		'render'    => 'low_dash_infinite_scroll_render',
 		'footer'    => 'page',
 	) );
 
 	// Add theme support for Responsive Videos.
 	add_theme_support( 'jetpack-responsive-videos' );
-} // end function whiteboard_jetpack_setup
-add_action( 'after_setup_theme', 'whiteboard_jetpack_setup' );
+
+	// Add theme support for Content Options.
+	add_theme_support( 'jetpack-content-options', array(
+		'post-details'    => array(
+			'stylesheet' => 'low-dash-style',
+			'date'       => '.posted-on',
+			'categories' => '.cat-links',
+			'tags'       => '.tags-links',
+			'author'     => '.byline',
+			'comment'    => '.comments-link',
+		),
+		'featured-images' => array(
+			'archive'    => true,
+			'post'       => true,
+			'page'       => true,
+		),
+	) );
+}
+add_action( 'after_setup_theme', 'low_dash_jetpack_setup' );
 
 /**
  * Custom render function for Infinite Scroll.
  */
-function whiteboard_infinite_scroll_render() {
+function low_dash_infinite_scroll_render() {
 	while ( have_posts() ) {
 		the_post();
-		get_template_part( 'template-parts/content', get_post_format() );
+		if ( is_search() ) :
+			get_template_part( 'template-parts/content', 'search' );
+		else :
+			get_template_part( 'template-parts/content', get_post_type() );
+		endif;
 	}
-} // end function whiteboard_infinite_scroll_render
+}

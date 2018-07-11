@@ -1,6 +1,6 @@
-inc
 node_modules
 scss
+sass
 .*
 *.map
 *.lock

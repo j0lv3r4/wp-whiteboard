@@ -11,16 +11,8 @@ const rsync = new Rsync()
 	.source(".")
 	.destination(distFolder);
 
-mix.sass("./scss/style.scss", "./style.css")
-	.js(
-		[
-			"./js/scripts.js",
-			"./js/navigation.js",
-			"./js/skip-link-focus-fix.js"
-		],
-		"./scripts.js"
-	)
-	.sourceMaps();
+mix.sass("./sass/style.scss", "./style.css");
+mix.sass("./sass/woocommerce.scss", "./woocommerce.css");
 
 rsync.execute();
 

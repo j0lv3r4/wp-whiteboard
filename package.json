@@ -1,13 +1,12 @@
 {
-  "name": "whiteboard",
+  "name": "low-dash",
   "version": "1.0.0",
-  "description": "Whiteboard for WordPress ===",
+  "description": "Low Dash for WordPress ===",
   "main": "scripts.js",
   "dependencies": {
     "bootstrap": "^4.0.0",
     "browser-sync": "^2.18.13",
     "browser-sync-webpack-plugin": "^1.2.0",
-    "jquery": "^3.2.1",
     "popper.js": "^1.12.5"
   },
   "devDependencies": {
@@ -23,14 +22,6 @@
     "hot": "node node_modules/cross-env/dist/bin/cross-env.js NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
     "production": "node node_modules/cross-env/dist/bin/cross-env.js NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/thinkxl/wp-whiteboard.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/thinkxl/wp-whiteboard/issues"
-  },
-  "homepage": "https://github.com/thinkxl/wp-whiteboard#readme"
+  "author": "Juan Olvera",
+  "license": "GPLv2"
 }
