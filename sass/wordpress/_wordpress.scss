@@ -1,0 +1,42 @@
+/*!
+Theme Name: Low Dash
+Theme URI: https://_.jolvera.biz
+Author: Juan Olvera
+Author URI: https://jolvera.biz
+Description: Starter theme based on Low Dash
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: low-dash
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+Low Dash is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+*/
+
+@import "variables";
+@import "mixins";
+
+
+/**
+ * Alignments
+ */
+@import "alignments";
+
+/**
+ * Clearings
+ */
+@import "clearings";
+
+/**
+ * Infinite scroll
+ */
+@import "infinite-scroll";
+
+/**
+ * Media
+ */
+@import "media";

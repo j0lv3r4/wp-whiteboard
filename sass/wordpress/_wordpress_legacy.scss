@@ -1,0 +1,273 @@
+/* =WordPress Core
+-------------------------------------------------------------- */
+.alignnone {
+  margin: 5px 20px 20px 0;
+}
+
+.aligncenter,
+div.aligncenter {
+  display: block;
+  margin: 5px auto 5px auto;
+}
+
+.alignright {
+  float:right;
+  margin: 5px 0 20px 20px;
+}
+
+.alignleft {
+  float: left;
+  margin: 5px 20px 20px 0;
+}
+
+a img.alignright {
+  float: right;
+  margin: 5px 0 20px 20px;
+}
+
+a img.alignnone {
+  margin: 5px 20px 20px 0;
+}
+
+a img.alignleft {
+  float: left;
+  margin: 5px 20px 20px 0;
+}
+
+a img.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.wp-caption {
+  background: #fff;
+  border: 1px solid #f0f0f0;
+  max-width: 96%; /* Image does not overflow the content area */
+  padding: 5px 3px 10px;
+  text-align: center;
+}
+
+.wp-caption.alignnone {
+  margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignleft {
+  margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignright {
+  margin: 5px 0 20px 20px;
+}
+
+.wp-caption img {
+  border: 0 none;
+  height: auto;
+  margin: 0;
+  max-width: 98.5%;
+  padding: 0;
+  width: auto;
+}
+
+.wp-caption p.wp-caption-text {
+  font-size: 11px;
+  line-height: 17px;
+  margin: 0;
+  padding: 0 4px 5px;
+}
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+clip: rect(1px, 1px, 1px, 1px);
+position: absolute !important;
+      white-space: nowrap;
+height: 1px;
+width: 1px;
+overflow: hidden;
+}
+
+.screen-reader-text:focus {
+background-color: #f1f1f1;
+border-radius: 3px;
+box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+clip: auto !important;
+color: #21759b;
+display: block;
+font-size: 14px;
+font-size: 0.875rem;
+font-weight: bold;
+height: auto;
+left: 5px;
+line-height: normal;
+padding: 15px 23px 14px;
+text-decoration: none;
+top: 5px;
+width: auto;
+z-index: 100000; /* Above WP toolbar. */
+}
+
+/*
+* Media
+*/
+
+/* Images */
+figure,
+img {
+display: block;
+height: auto; /* Make sure images are scaled correctly. */
+max-width: 100%; /* Adhere to container width. */
+}
+
+/* Captions */
+.wp-caption {
+margin-bottom: 1.5rem;
+max-width: 100%;
+
+.wp-caption-text {
+  margin: .8075rem 0;
+  }
+}
+
+.wp-caption-text {
+text-align: center;
+}
+
+/* Galleries */
+.gallery {
+margin-bottom: 1.5em;
+}
+
+.gallery-item {
+display: inline-block;
+text-align: center;
+vertical-align: top;
+width: 100%;
+}
+
+.gallery-columns-2 .gallery-item {
+max-width: 50%;
+}
+
+.gallery-columns-3 .gallery-item {
+max-width: 33.33%;
+}
+
+.gallery-columns-4 .gallery-item {
+max-width: 25%;
+}
+
+.gallery-columns-5 .gallery-item {
+max-width: 20%;
+}
+
+.gallery-columns-6 .gallery-item {
+max-width: 16.66%;
+}
+
+.gallery-columns-7 .gallery-item {
+max-width: 14.28%;
+}
+
+.gallery-columns-8 .gallery-item {
+max-width: 12.5%;
+}
+
+.gallery-columns-9 .gallery-item {
+max-width: 11.11%;
+}
+
+.gallery-caption {
+display: block;
+}
+
+/* Make sure embeds and iframes fit their containers. */
+embed,
+iframe,
+object {
+max-width: 100%;
+}
+
+/*
+* Comments
+*/
+
+#comments {
+  border: 1px solid $gray-200;
+  border-radius: 6px;
+
+  /* Any video inside the comments */
+  iframe {
+    max-width: 100%;
+  }
+}
+
+.comments-title {
+  margin-left: 1em;
+  margin-top: 1em;
+  margin-bottom: 0;
+}
+
+.comment-list {
+  margin-top: 1em;
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.comment {
+  padding: 1em;
+  border-bottom: 1px dotted $gray-200;
+
+  &.even {
+    // Add some styling here
+  }
+
+  &.odd {
+    background-color: $gray-100;
+  }
+}
+
+.comment-author {
+  .avatar {
+    float: left;
+    margin-right: .5em;
+  }
+}
+
+.comment-metadata {
+  font-size: .8em;
+  font-style: italic;
+}
+
+#respond {
+  padding: 1em;
+
+  textarea,
+  label {
+    display: block;
+  }
+}
+
+/* Misc navigation elements */
+.site-main .comment-navigation,
+.site-main .posts-navigation,
+.site-main .post-navigation {
+  margin: 0 0 1.5em;
+  overflow: hidden;
+}
+
+/* Pagination */
+.comment-navigation .nav-previous,
+.posts-navigation .nav-previous,
+.post-navigation .nav-previous {
+  float: left;
+  width: 50%;
+}
+
+.comment-navigation .nav-next,
+.posts-navigation .nav-next,
+.post-navigation .nav-next {
+  float: right;
+  text-align: right;
+  width: 50%;
+}

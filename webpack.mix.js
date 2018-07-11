@@ -12,7 +12,7 @@ const rsync = new Rsync()
 	.destination(distFolder);
 
 mix.sass("./sass/style.scss", "./style.css");
-mix.sass("./sass/woocommerce.scss", "./woocommerce.css");
+mix.sass("./sass/woocommerce/woocommerce.scss", "./woocommerce.css");
 
 rsync.execute();
 

@@ -14,35 +14,35 @@ $woocommerce__color-info: #3D9CD2;
 /**
  * Imports
  */
-@import "variables-site/variables-site";
-@import "mixins/mixins-master";
+@import "../variables-site/variables-site";
+@import "../mixins/mixins-master";
 
 /**
  * Shop tables
  */
-@import "shop/tables";
+@import "tables";
 
 /**
  * Products
  */
-@import "shop/products";
+@import "products";
 
 /**
  * Single product
  */
-@import "shop/single-product";
+@import "single-product";
 
 /**
  * Checkout
  */
-@import "shop/checkout";
+@import "checkout";
 
 /**
  * General WooCommerce components
  */
-@import "shop/components";
+@import "components";
 
 /**
  * WooCommerce widgets
  */
-@import "shop/widgets";
+@import "widgets";

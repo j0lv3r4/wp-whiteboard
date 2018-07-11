@@ -1,0 +1,52 @@
+// These stylings are for the style guide page template
+// and should not be included in the final theme
+
+.style-guide-section {
+  padding-bottom: 2em;
+  margin-bottom: 2em;
+  border-bottom: 2px solid #ddd;
+}
+
+.style-guide-section {
+margin-bottom: 2em;
+}
+
+.swatch-primary {
+color: color('white');
+background-color: theme-color('primary');
+}
+
+.swatch-secondary {
+  color: color('white');
+  background-color: theme-color('secondary');
+}
+
+.swatch-success {
+  color: color('white');
+  background-color: theme-color('success');
+}
+
+.swatch-danger {
+  color: color('white');
+  background-color: theme-color('danger');
+}
+
+.swatch-warning {
+  color: color('white');
+  background-color: theme-color('danger');
+}
+
+.swatch-info {
+  color: color('white');
+  background-color: theme-color('info');
+}
+
+.swatch-light {
+  color: color('dark');
+  background-color: theme-color('light');
+}
+
+.swatch-dark {
+  color: color('white');
+  background-color: theme-color('dark');
+}
