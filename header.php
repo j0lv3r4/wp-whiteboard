@@ -21,13 +21,13 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'low-dash' ); ?></a>
 
 	<header id="masthead" class="site-header">
 		<div class="container">
 			<div class="row">
-				<div class="site-branding">
+				<div class="site-branding col-12">
+					<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'low-dash' ); ?></a>
+
 					<?php
 					the_custom_logo();
 					if ( is_front_page() && is_home() ) :
@@ -69,4 +69,6 @@
 		</div> <!-- .container -->
 	</header><!-- #masthead -->
 
-	<div id="content" class="site-content">
+	<main id="content" class="site-content">
+		<div class="container">
+			<div class="row">

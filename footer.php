@@ -11,12 +11,14 @@
 
 ?>
 
-	</div><!-- #content -->
+			</div> <!-- .row -->
+		</div> <!-- .container -->
+	</main><!-- #content -->
 
 	<footer id="colophon" class="site-footer">
 		<div class="container">
 			<div class="row">
-				<div class="site-info">
+				<div class="site-info col">
 					<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'low-dash' ) ); ?>">
 						<?php
 						/* translators: %s: CMS name, i.e. WordPress. */
